@@ -1,0 +1,238 @@
+---
+title: "VisdeDatosT3"
+output: html_document
+date: "2024-11-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Este Markdown es para el tercer taller de datos. Vamos a crear un tema para las gráficas que ya hicimos en el análisis descriptivo. Seleccionaremos unas 6 
+
+Primero los paquetes que necesitamos y las bases que usamos
+showtext: para poder cambiar las fuentes 
+```{r}
+pacman::p_load(skimr, ggplot2, dplyr, tidyverse, ggcorrplot, textreg, GGally, corrplot, scales, showtext)
+Diputados<-read.csv("D:/Tesis/Datos/Diputados.csv")
+```
+
+```{r}
+Diputados<- Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                        "2" = "PRI",
+                        "3" = "PRD",
+                        "4" = "PAN",
+                        "5" = "MC",
+                        "6" = "PVEM",
+                        "7" = "PT",
+                        "8" = "Sin Partido"))
+
+partidoscol <- c("Morena" = "#460000", 
+               "PAN" = "#0000ff", 
+               "PRI" = "#008000", 
+               "PVEM" = "#4CBD49",
+               "PT" = "#d80300",
+               "MC" = "#FF8000",
+               "Sin Partido" = "gray", 
+               "PRD" = "yellow")
+```
+
+
+```{r Llamar_fuentes}
+showtext.auto()
+showtext.opts(dpi = 200)
+font_add_google(name = "Kanit", family = "kanit")
+```
+
+Hagamos el theme de las gráficas
+```{r}
+TemaTesis <- theme(plot.title = element_text(size = 15, face = "bold", color ="grey10", family = "kanit"), 
+                   plot.title.position = "plot",
+                   plot.subtitle = element_text(size = 10, face = "italic", color = "grey30", family = "kanit"),
+                   plot.caption = element_text(size = 7, color = "grey30", family = "kanit"), plot.caption.position = "plot",
+                   panel.background = element_rect(fill = "white", color = "transparent"),
+                   panel.grid.major = element_line(color = "black"),
+                   axis.title = element_text(size = 13, color = "black", family = "kanit" ),
+                   axis.text = element_text(family = "kanit"),
+                   legend.title = element_text(size = 13, face = "bold", family = "kanit"),
+                   legend.text = element_text(size = 11, family = "kanit"),
+                   strip.text = element_text( size = 12, face = "italic", family = "kanit"))
+```
+
+
+
+```{r G1Experiencia}
+G1<-  Diputados %>% 
+  ggplot(aes(x= exp_leg, fill = partido))+
+  geom_histogram(col = "black", binwidth = 0.5)+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  scale_x_continuous(breaks = c(0,1, 2, 3,4,5,6,7,8,9))+
+  facet_wrap(~partido)+
+  labs(title = "Experiencia legislativa de diputados de la LXV Legislatura por partido",
+       subtitle = "Cada unidad de 'experiencia' se refiere a una legislatura dentro de un congreso, local o federal",
+       x = "Experiencia legislativa",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+
+
+```{r G2Exp-Iniciativas}
+G2<-Diputados %>% 
+  filter(iniciativa <100) %>% 
+  rename(Partido = partido) %>% 
+  ggplot(aes(x = exp_leg, y = iniciativa, col = Partido))+
+  geom_jitter(size = 3, alpha = 0.8)+
+  scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 125, 150, 175))+
+  scale_x_continuous(breaks = c(0,1, 2, 3, 4, 5, 6, 7, 8, 9))+
+  scale_color_manual(values = partidoscol)+
+  labs(title = "Iniciativas presentadas de acuerdo a la experiencia legislativa",
+       subtitle = "Sin incluir a aquellos que presentaron más de 50",
+       x = "Experiencia Legislativa",
+       y = "Iniciativas Presentadas",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+
+```
+
+```{r}
+as.factor(Diputados$p_elecc)
+as.factor(Diputados$partido)
+```
+
+
+```{r G3AsistenciaP.Eleccion}
+G3<-Diputados %>% 
+  filter(p_elecc <3) %>% 
+  rename(Partido = partido) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "uninominal", "2" = "plurinominal")) %>% 
+  ggplot(aes(x = inasistencia, fill = Partido))+
+  geom_histogram()+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  facet_wrap(~p_elecc)+
+  labs(title = "Distribución de asistencia de diputados por principio y partido",
+       x = "Número de Inasistencias",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+```{r G4Posicionamiento-Partido}
+G4<-Diputados %>% 
+  select(partido, pleno) %>% 
+  filter(partido != "SP") %>% 
+  ggplot(aes(x = partido, y = pleno, fill = partido))+
+  geom_boxplot(col = "grey30")+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  labs(title = "Distribución de participaciones en pleno de acuerdo al partido",
+       subtitle = "En la LXV Legislatura",
+       x = "Partido",
+       y = "Número de participaciones en Pleno",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+```{r G5Posicionamiento-Lider}
+G5<-Diputados %>% 
+  mutate(dirigencia = recode(dirigencia, "0" = "Militante", "1" = "Dirigente")) %>% 
+  filter(dirigencia >= 0) %>% 
+  ggplot(aes(x = dirigencia, y = pleno))+
+  geom_boxplot(fill = "#f5f5dc", col = "grey20")+
+  labs(title = "Distribución de participaciones en el pleno de la LXV Legislatura",
+     subtitle = "Entre militantes y líderes de partido",
+     x = "",
+     y = "Número de participaciones en Pleno",
+     caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+```{r G6Historia-partido}
+G6<-Diputados %>% 
+  filter(historia_pol> 0) %>% 
+  ggplot(aes(x = historia_pol, fill = partido))+
+  geom_bar()+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(1,2,3,4,5,6))+
+  facet_wrap(~partido)+
+  labs(title = "Numero de partidos al que han pertenecido diputados",
+       subtitle = "Por partido",
+       x = "Número de Partidos",
+       y = "Frecuencia",
+       fill = "Partido",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  theme(legend.position = "none")+
+  TemaTesis
+```
+
+```{r G7Indisciplina-Partido}
+G7<-Diputados %>% 
+  select(partido, indisciplina) %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  group_by(partido) %>% 
+  summarise(frecuencia = sum(indisciplina)) %>% 
+  ggplot(aes( x= partido, y = frecuencia, fill = partido))+
+  geom_col()+
+  geom_text(aes(label = comma(frecuencia, suffix = " votos")), vjust = -0.1)+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  labs(title = "Instancias de indisciplina en la LXV Legislatura",
+       subtitle = "Cada unidad es un voto en sentido diferente al partido en alguna iniciativa de la muestra",
+       x = " ",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+```{r G8Indis.Exp}
+G8<-Diputados %>% 
+  mutate(Partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  ggplot(aes(x = exp_leg, y = indisciplina, col = Partido))+
+  geom_jitter(size = 3, alpha = 0.8) +
+  scale_color_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0, 1, 2, 3, 4,5,6,7,8, 9))+
+  labs(title = "La indisciplina de legisladores novatos y veteranos",
+       subtitle = "Cada unidad es un voto en sentido diferente al partido en alguna iniciativa de la muestra",
+       x = "Experiencia Legislativa",
+       y = "Instancias de indisciplina",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  TemaTesis
+```
+
+
+```{r Guardad0}
+ggsave("G1.jpeg", plot = G1, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G2.jpeg", plot = G2, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G3.jpeg", plot = G3, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G4.jpeg", plot = G4, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G5.jpeg", plot = G5, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G6.jpeg", plot = G6, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G7.jpeg", plot = G7, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+
+ggsave("G8.jpeg", plot = G8, device = "jpeg", path = "D:/Tesis/graficas/", dpi = 300)
+```
+

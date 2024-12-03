@@ -1,0 +1,547 @@
+code,nombre,edad,genero,p_elecc,region,partido,chapulin,historia_pol,dirigencia,exp_admin,exp_leg,comision,presi,secre,directiva,jucopo,iniciativa,pleno,puntos,reelecc,completo,asoc,indisciplina,inasistencia,licencia
+mor1,Alfaro Morales Maria Isabel,55,2,1,4,1,1,2,1,1,1,6,0,2,0,0,3,3,4,1,0,1,0,0,0
+mor2,Almazan Burgos Karla Yuritzi,47,2,1,5,1,1,1,1,0,1,2,0,0,1,0,11,24,0,0,0,1,0,0,0
+mor3,Almazan Muñoz Odette Nayeri,24,2,1,4,1,1,1,0,0,0,3,0,1,0,0,7,4,7,0,0,0,0,2,0
+mor4,Alvarado Murguia Rosa Maria,54,2,2,3,1,1,1,0,1,0,3,0,1,0,0,5,2,4,0,0,0,0,1,0
+mor5,Ambrocio Gachuz Jose Guadalupe,60,1,1,4,1,1,2,0,1,2,4,0,2,0,0,10,7,3,0,0,0,0,0,0
+mor6,Antonio Altamirano Carol,57,1,1,3,1,1,2,1,1,4,3,0,1,0,0,5,9,6,1,0,1,0,2,3
+mor7,Arellano Reyes Martha Nabetse,26,2,2,1,1,1,1,0,0,0,4,0,2,0,0,4,4,0,0,0,0,0,0,0
+mor8,Armendariz Guerra Carmen Patricia,66,2,2,3,1,1,3,1,1,0,5,1,1,0,0,27,10,21,0,0,1,0,9,0
+mor9,Arreola Martinez Martha Alicia,64,2,3,1,1,1,1,1,1,0,5,0,1,0,0,5,13,11,0,0,1,0,0,0
+mor10,Arriaga Rojas Justino Eugenio,41,1,1,2,1,3,2,1,1,2,6,0,3,0,0,69,12,24,0,0,1,0,1,3
+mor11,Ascencio Ortega Reyna Celeste,28,2,2,5,1,1,1,0,1,1,5,0,2,0,0,105,19,31,0,0,0,0,1,0
+mor12,Atanacio luna Raymundo,51,1,1,4,1,2,3,0,1,2,4,0,1,0,0,44,38,40,1,0,0,0,2,0
+mor13,Avila Flores Claudia Selene,45,2,2,4,1,1,1,0,0,0,6,0,2,0,0,8,23,4,0,0,0,0,1,0
+mor14,Ayala Leyva Ana Elizabeth,45,2,1,1,1,1,1,0,1,0,12,0,1,0,0,22,14,2,1,0,0,0,1,0
+mor15,Aysa Damas Carlos Miguel,25,1,2,3,1,3,2,0,0,0,6,0,3,0,0,0,1,0,0,0,0,1,3,0
+mor16,Baldenebro Arredondo Manuel de Jesus,59,1,1,1,1,1,3,1,1,1,5,1,0,0,0,22,8,0,1,0,1,0,4,3
+mor17,Barajas Garcia Martha,57,2,2,2,1,1,3,1,1,1,3,0,1,0,0,17,5,0,0,0,1,0,1,0
+mor18,Barboza Llamas Maximiano,51,1,2,1,1,1,3,1,0,1,6,0,2,0,0,5,5,0,0,0,1,0,1,0
+mor19,Barrera Puc Rocío Natalí,35,2,2,3,1,1,1,1,1,0,3,0,1,0,0,12,11,3,1,0,1,0,2,0
+mor20,Barrera Toledo Jorge Alberto,36,1,1,4,1,1,1,0,1,0,8,0,2,0,0,7,10,1,0,0,0,0,1,0
+mor21,Batun Chulim Wilbert Alberto,41,2,1,3,1,1,1,0,0,1,6,0,2,0,0,11,4,0,0,0,0,0,0,3
+mor22,Bautista Bravo Juan Angel ,40,1,1,5,1,1,1,0,1,1,4,0,2,0,0,4,1,9,1,0,0,0,1,0
+mor23,Bautista Hernandez Esteban,54,1,1,3,1,1,3,1,1,0,4,0,1,0,0,5,1,0,0,0,1,0,0,3
+mor24,Bautista Pelaez Maria del Carmen,30,2,1,3,1,1,1,0,0,1,13,1,1,0,0,7,13,1,1,0,0,0,2,0
+mor25,Blancas Mercado Bruno,46,1,1,1,1,1,1,0,0,1,18,0,3,0,9,16,5,13,1,0,0,0,1,3
+mor26,Bonilla Herrera Raquel,37,2,1,3,1,1,1,1,0,1,4,0,2,0,0,25,8,9,0,0,1,0,1,0
+mor27,Borrego Adame Francisco Javier,66,1,1,2,1,1,1,1,0,1,6,0,3,0,0,21,12,27,1,0,1,0,1,0
+mor28,Briano Borunda Jesus Roberto,42,1,2,1,1,1,1,0,0,0,10,0,1,0,0,7,6,7,0,0,0,0,1,0
+mor29,Bito Mazariegos Ismael,50,1,2,3,1,1,2,0,1,1,4,0,2,0,0,13,13,14,0,0,0,0,0,3
+mor30,Bustamante Castellanos Adriana,44,2,1,3,1,1,1,0,0,1,12,0,1,1,0,21,29,4,0,0,0,3,0,0
+mor31,Cabada Alvidrez Hector Armando,54,1,2,1,1,1,1,0,1,0,3,0,1,0,0,0,4,0,1,0,0,0,1,1
+mor32,Camacho Reynoso Martha Azucena,38,2,1,5,1,1,1,0,1,0,7,0,1,0,0,7,8,8,0,0,0,0,0,3
+mor33,Candelario Figueroa Luz Adriana,37,2,1,1,1,1,1,0,1,0,7,0,2,0,0,4,4,2,0,0,0,0,0,0
+mor34,Cano Gonzales Susana,72,1,2,5,1,1,1,1,1,1,3,0,2,0,0,22,14,9,0,1,1,0,0,0
+mor35,Canton Zetina Oscar,68,1,2,3,1,1,4,0,1,6,4,0,2,1,0,0,0,12,0,0,0,0,0,3
+mor36,Caro Cabrera Salvador ,50,1,2,1,1,3,3,1,1,3,6,0,3,0,0,22,59,24,0,0,1,0,4,0
+mor37,Carrazco Macias Olegaria,61,2,1,1,1,1,1,1,1,1,4,0,1,0,0,8,9,16,1,0,1,0,0,0
+mor38,Carrillo Cubillas Mario Miguel,40,1,1,4,1,1,1,1,1,0,14,0,1,0,0,13,27,5,1,0,1,0,1,0
+mor39,Carvajal Hidalgo Alejandro,41,1,1,4,1,1,1,0,0,0,5,0,1,0,0,18,7,17,1,0,0,0,1,3
+mor40,Castellanos Polanco Favio,31,1,3,2,1,1,1,0,1,1,4,0,1,0,0,13,1,7,1,1,0,0,3,0
+mor41,Castillo Secundino Celestina,47,2,2,5,1,1,1,0,0,0,3,0,1,0,0,2,3,0,0,0,0,0,0,0
+mor42,Chapman Moreno Manuel Guillermo,54,1,2,1,1,1,2,1,1,0,4,0,1,0,0,1,8,0,0,0,1,0,2,0
+mor43,Chavez Rojas Olga Leticia,57,2,2,2,1,1,1,0,0,0,7,0,2,0,0,7,18,8,1,0,0,0,0,0
+mor44,Chavira de la Rosa Maria Guadalupe,53,2,1,4,1,1,2,0,0,2,4,0,1,0,0,6,41,7,0,0,0,0,1,0
+mor45,Cisneros Lujan Angelica Ivonne,64,1,2,3,1,1,2,1,1,0,3,1,0,0,0,25,29,11,0,0,1,0,1,0
+mor46,Collado Crisolia Veronica,39,2,2,5,1,1,1,0,0,0,5,0,1,0,0,5,10,10,0,0,0,0,0,0
+mor47,Constantino Magaña Esteban Rafael,28,1,3,5,1,1,1,0,0,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0
+mor48,Contreras Castillo Armando,55,1,2,3,1,1,3,1,1,3,2,0,1,0,0,16,7,6,0,0,1,0,2,0
+mor49,Contreras García Janicie,49,2,1,3,1,1,1,0,1,0,3,0,1,0,0,3,3,0,0,0,0,0,0,0
+mor50,Corona Arvizu Armando,26,1,1,5,1,1,2,0,0,0,6,0,3,0,0,8,2,1,1,0,0,0,0,3
+mor51,Coutiño Gutierrez Leonor,54,2,2,3,1,1,1,0,0,0,6,0,1,0,0,0,4,11,0,0,0,0,1,0
+mor52,Cruz Santos Flora Tania,43,2,1,3,1,1,2,1,1,1,3,1,1,0,0,9,17,8,0,0,1,0,0,0
+mor53,De la Cruz Lima José Miguel,38,1,2,5,1,1,1,0,0,0,3,0,2,0,0,8,16,1,0,0,0,0,1,0
+mor54,Del Castillo Ibarra Erika Vanessa,33,2,1,4,1,1,1,0,1,1,15,0,4,0,0,4,45,3,0,0,0,0,3,0
+mor55,Diaz Garcia Karla Estrella,25,2,2,2,1,1,1,1,1,0,4,0,2,0,0,4,5,6,0,0,1,0,0,3
+mor56,Diaz Vilchis Catalina,57,1,2,5,1,1,1,1,0,0,5,0,1,0,0,9,12,5,1,0,1,0,0,0
+mor57,Dominguez Escobar Angel,42,1,1,3,1,1,1,0,1,1,3,0,2,0,0,4,5,3,0,0,0,0,6,0
+mor58,Dominguez Flores Rosalinda,39,2,2,3,1,1,2,1,0,2,4,0,2,0,0,2,13,3,0,0,1,0,1,3
+mor59,Dominguez Rodriguez Roberto Angel,41,1,1,5,1,1,2,0,1,2,4,0,2,0,0,0,4,0,1,0,0,0,1,0
+mor60,Elizondo Guerra Olga Juliana ,56,2,1,2,1,1,3,1,1,1,4,0,2,0,0,15,2,43,1,0,1,0,0,3
+mor61,Elorza Flores Jose Luis,48,1,1,3,1,1,2,0,0,1,4,0,1,0,0,4,3,3,0,0,0,0,0,0
+mor62,Espinoza Lopez Brenda,33,2,1,4,1,1,1,1,1,1,0,0,0,1,0,5,8,0,0,0,1,0,0,0
+mor63,Esquivel Nava Maria Magdalena Oliva,67,2,2,4,1,1,1,0,0,0,4,0,2,0,0,12,6,6,0,0,0,0,1,0
+mor64,Fernandez Hernandez Shamir ,45,1,1,2,1,3,2,0,1,2,5,0,2,0,0,8,5,1,0,0,0,0,1,3
+mor65,Fletes Araiza Jose Guadalupe,27,1,1,1,1,3,2,0,1,0,3,0,1,0,0,6,17,0,0,0,0,0,1,0
+mor66,Flores Galindo Ana Lilia,50,2,3,4,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+mor67,Flores Pacheco Jose Luis,35,1,1,3,1,1,1,0,0,1,12,0,1,0,0,3,7,0,0,0,0,0,2,0
+mor68,Flores Sanchez Marco Antonio,45,1,2,2,1,1,2,1,0,0,4,0,2,0,0,2,1,1,0,0,1,0,2,1
+mor69,Garcia Almaguer Hamlet,34,2,2,1,1,1,1,1,1,0,12,0,2,0,0,8,55,1,0,0,1,0,0,0
+mor70,Garcia Anaya Lidia,63,2,1,4,1,1,1,1,1,1,4,0,2,0,0,23,32,9,0,0,1,0,1,0
+mor71,Garcia Garcia Jose Antonio,41,1,1,5,1,1,1,0,1,0,6,0,3,0,0,32,14,4,0,0,0,0,1,9
+mor72,Garcia Montiel Otoniel,34,1,2,5,1,1,1,0,0,0,5,0,1,0,0,8,11,8,0,0,0,0,2,0
+mor73,Garcia Moreno Maria Clemente,36,2,2,4,1,1,2,1,0,0,4,0,2,0,0,22,37,25,0,0,1,1,3,0
+mor74,Garcia Sandoval Zeus,30,1,2,3,1,1,1,0,0,0,3,0,2,0,0,1,6,1,0,0,0,0,1,0
+mor75,Garcia Segura Marisol,49,2,2,4,1,1,1,1,1,0,6,1,0,0,0,39,31,4,0,0,1,0,1,0
+mor76,Giron Hernandez Olimpia Tamara,47,2,1,5,1,1,1,0,1,0,9,0,3,1,0,11,19,2,0,0,0,0,0,0
+mor77,Godoy Rangel Leonel,61,1,1,5,1,1,3,0,1,3,13,0,1,1,0,2,155,2,1,0,0,0,1,0
+mor78,Gonzalez Cruz Alfredo Aurelio,36,1,2,3,1,1,1,1,0,0,5,0,2,0,0,5,3,0,0,0,1,0,3,0
+mor79,Gonzalez Hernandez Alma Anahi,29,2,1,3,1,1,1,0,1,0,5,0,1,0,0,19,12,18,0,0,0,0,0,3
+mor80,Guerra Mena Juanita,38,2,1,4,1,1,2,0,1,1,3,1,1,0,0,23,10,9,0,0,0,0,1,3
+mor81,Guerrero Marquez Antolin,58,1,1,2,1,1,1,1,1,0,4,0,1,0,0,19,5,7,0,0,1,0,1,0
+mor82,Gutierrez Camacho Oscar Eugenio,48,1,1,4,1,1,1,0,0,0,18,0,4,0,0,2,3,0,0,0,0,0,0,0
+mor83,Gutierrez Gutierrez Daniel,45,1,1,3,1,1,2,1,1,1,4,0,3,0,0,9,17,3,0,0,1,0,2,0
+mor84,Gutierrez Luna Sergio Carlos,45,1,2,5,1,1,1,0,1,1,3,0,1,1,0,18,19,4,1,0,0,0,2,0
+mor85,Hernandez Espejo Rosa,59,2,1,3,1,1,2,0,1,0,7,0,2,0,0,11,14,5,1,0,0,0,2,3
+mor86,Hernandez Hernandez Saul,49,1,2,2,1,1,2,0,1,0,5,0,2,0,0,14,3,6,0,0,0,0,0,0
+mor87,Hernandez Perez Cesar Agustin,41,1,1,5,1,1,1,0,0,0,5,0,2,0,0,19,16,38,1,0,0,0,0,3
+mor88,Hernandez Perez Maria Eugenia,60,2,1,5,1,1,2,0,0,1,5,0,1,0,0,27,28,20,0,0,0,0,4,0
+mor89,Hernandez Ruedas Bennelly Jocabeth,32,1,1,2,1,1,1,0,1,0,5,0,2,0,0,50,6,3,0,0,0,0,0,3
+mor90,Hernandez Saenz Claudia Alejandra,44,2,1,2,1,2,2,0,1,0,3,0,1,0,0,18,5,9,1,0,0,0,0,3
+mor91,Hernandez Tapia Arturo Roberto,60,1,1,5,1,1,3,0,1,1,5,0,1,0,0,6,25,3,1,0,0,0,0,0
+mor92,Hernandez Villalpando Rafael,74,1,1,3,1,1,3,0,1,1,5,0,3,0,0,1,0,0,0,0,0,0,3,0
+mor93,Hernandez Villanueva Rocio,34,2,3,3,1,1,1,0,0,0,7,0,1,0,0,3,3,1,0,1,0,0,1,0
+mor94,Herrera Villavicencio Monica,35,2,1,3,1,1,1,0,0,0,8,0,1,0,0,3,13,9,1,1,0,0,0,3
+mor95,Huerta Jurado Javier,68,1,1,5,1,1,3,1,1,0,7,0,1,0,0,7,11,3,0,0,1,0,0,0
+mor96,Jarero Velazquez Miguel Pavel,44,1,1,1,1,1,2,0,1,2,3,0,1,0,0,0,1,0,0,0,0,0,0,14
+mor97,Juan Carlos Irma,44,2,1,3,1,1,2,1,1,1,7,1,0,0,0,29,25,1,1,0,1,0,0,0
+mor98,Llergo Latournuere Mario Rafael,50,1,1,3,1,1,1,0,1,1,9,0,2,0,0,1,15,0,0,0,0,0,1,0
+mor99,Lopez Guadarrama Carlos,38,1,1,5,1,1,3,0,0,0,7,0,2,0,0,5,2,1,0,0,0,0,3,0
+mor100,Luevano Luna Salma,53,2,1,2,1,1,1,1,0,0,5,1,0,0,0,26,11,3,0,0,1,0,0,0
+mor101,Mares Cossio Hector Ireneo,63,1,1,1,1,1,4,0,1,2,9,1,1,0,0,2,10,0,0,0,0,1,0,0
+mor102,Marin Diaz Fernando,63,1,2,4,1,1,1,0,0,0,4,0,1,0,0,4,6,4,0,0,0,0,0,0
+mor103,Marin Rodriguez Hector Jesus,41,2,3,2,1,1,1,0,1,0,3,0,2,0,0,0,1,0,0,1,0,0,0,0
+mor104,Marquez Alkadef Cortes Cecilia,52,2,2,1,1,1,0,0,0,0,15,0,3,0,0,11,64,24,0,0,0,0,0,3
+mor105,Martinez Diaz Esther Berenice,36,2,2,2,1,1,2,0,1,0,5,0,1,0,0,18,4,0,0,0,0,0,1,3
+mor106,Martinez Espinoza Gabriela,54,2,1,1,1,1,0,0,1,0,4,0,1,0,0,8,9,5,0,0,0,0,1,0
+mor107,Martinez Lopez Jaime,60,1,2,5,1,1,1,1,1,0,4,1,0,0,0,15,15,1,0,0,1,0,0,0
+mor108,Maya Martinez Hirepan,44,1,2,4,1,1,1,0,1,1,5,0,1,0,0,6,13,6,0,0,0,0,2,0
+mor109,Medina Filigrana Marcos Rosendo,40,1,1,3,1,1,2,0,1,2,8,3,1,0,0,7,58,1,0,0,0,0,1,0
+mor110,Mendez Denis Lorena,53,2,1,3,1,1,3,0,1,2,3,0,1,0,0,0,0,0,0,0,0,0,2,0
+mor111,Mendoza Alvarez Mayra Alicia,40,2,1,2,3,1,1,0,1,1,4,0,2,0,0,2,2,0,1,0,0,0,1,0
+mor112,Merlin Garcia María del Rosario,56,2,1,4,1,1,2,1,0,2,5,0,1,0,0,9,7,9,0,0,1,0,0,0
+mor113,Mier Velazco Moises Ignacio,60,1,2,4,1,1,3,0,1,4,1,0,0,0,1,10,19,1,0,0,0,0,1,0
+mor114,Morales Miranda Flor Ivone,52,2,1,4,1,1,2,1,1,2,6,0,1,0,0,13,6,0,0,0,1,0,0,0
+mor115,Morales Romero Martha Rosa ,54,2,1,3,1,1,2,1,0,0,3,0,2,0,0,12,3,5,0,0,1,0,0,0
+mor116,Morena Guerra Evangelina,39,2,1,1,1,1,2,1,1,1,13,0,3,0,0,8,4,11,1,0,1,0,1,2
+mor117,Moreno Rivera Julio Cesar,50,1,2,4,1,1,2,1,1,3,3,0,1,0,0,2,3,0,1,0,1,0,3,3
+mor118,Murguia Lardizabal Daniel,54,1,1,1,1,1,2,1,0,1,3,0,1,0,0,11,21,31,1,0,1,1,0,0
+mor119,Muñoz Alvarez Ruben Gregorio,55,1,2,1,1,1,1,1,1,0,6,1,0,0,0,0,6,0,0,0,1,0,0,0
+mor120,Narro Panameño Blanca Araceli,56,2,2,2,1,1,1,1,0,0,4,0,1,0,0,17,4,1,1,0,1,0,1,0
+mor121,Navarrete Rivera Alma Delia,49,2,1,5,1,1,2,0,0,1,6,0,2,0,0,9,16,5,0,0,0,0,0,0
+mor122,Navarro Conkle Sandra Luz,46,2,2,1,1,1,1,0,0,0,15,0,1,0,0,3,6,6,0,0,0,0,2,0
+mor123,Noriega Romero Carlos,59,1,2,2,1,1,1,0,1,0,3,0,1,0,0,2,1,0,0,0,0,1,3,0
+mor124,Obrador Narvaez Manuela del Carmen,50,2,1,3,1,1,1,0,1,1,3,0,1,0,0,0,1,0,0,0,0,0,0,0
+mor125,Ocampo Manzanares Araceli,49,2,1,4,1,1,1,0,0,1,8,0,1,0,0,11,19,9,0,0,0,0,1,3
+mor126,Ochoa Fernandez Cuauhtemoc,50,1,1,5,1,2,3,0,1,1,3,4,0,1,1,3,4,5,0,0,0,1,1,3
+mor127,Olua Gonzalez Yessenia Leticia,29,2,1,1,1,1,1,0,1,0,4,0,1,0,0,71,2,3,0,0,0,0,0,3
+mor128,Olvera Bautista Simey,38,2,1,5,1,1,2,0,1,2,3,0,1,0,0,6,16,1,0,1,0,0,0,10
+mor129,Ortega Fonseca Pedro David,31,1,1,2,1,1,1,0,1,0,10,0,1,0,0,10,13,7,0,0,0,0,2,0
+mor130,Ortiz Tejeda Carlos Francisco,83,1,2,4,1,1,2,0,0,1,3,1,0,1,0,0,12,0,0,0,0,0,5,0
+mor131,Pacheco Marrufo Rommel Aghmed,35,1,1,3,1,3,2,1,0,0,4,0,1,0,0,38,10,20,0,0,1,0,1,3
+mor132,Pani Barragan Alejandra,57,2,1,4,1,1,2,0,1,1,4,0,3,0,0,12,21,0,0,0,0,0,0,0
+mor133,Parra Juarez Ines,43,2,1,4,1,1,1,0,0,0,3,0,1,0,0,0,6,1,0,0,0,3,3,0
+mor134,Perez Barcenas Lidia,40,2,1,4,1,1,1,0,1,0,5,0,2,0,0,23,38,34,0,0,0,0,1,0
+mor135,Perez Bernabe Jaime Humberto,48,1,1,3,1,1,2,1,1,1,6,3,0,0,0,1,11,0,1,0,1,0,1,3
+mor136,Perez Garibay Marco Antonio,62,1,2,1,1,1,1,0,0,0,3,0,2,0,0,6,4,0,1,0,0,0,1,0
+mor137,Perez Gutierrez Blanca Carolina,34,2,2,3,1,1,1,0,0,0,4,0,1,0,0,6,1,1,0,0,0,0,0,0
+mor138,Perez Hernandez Carlos Augusto,44,1,1,4,1,1,2,0,1,0,3,0,2,0,0,1,9,1,0,1,0,0,0,11
+mor139,Perez Lopez Beatriz Dominga,46,2,1,3,1,1,1,1,1,1,5,0,1,0,0,11,12,3,0,0,1,0,0,0
+mor140,Perez Navarrete Miguel Angel,54,1,1,5,1,1,1,1,1,0,5,0,1,0,0,13,4,1,0,0,1,0,0,1
+mor141,Perez Segura Laura Imelda,41,2,1,1,1,1,1,0,0,0,5,0,1,0,0,13,28,43,0,0,0,0,1,3
+mor142,Peña Escalante Rosangela Amairany,28,2,1,1,1,1,1,0,1,0,10,0,2,1,0,7,12,1,0,0,0,0,0,1
+mor143,Peñaloza Pedro Sergio,68,1,2,4,1,1,0,1,0,0,6,0,1,0,0,10,14,4,0,0,1,0,0,0
+mor144,Polevnsky Gurwitz Yeidckol,63,2,2,5,1,1,2,0,0,2,11,0,5,0,0,1,23,4,0,0,0,2,1,1
+mor145,Porras Dominguez Alfredo,64,1,1,1,1,2,3,0,0,1,5,0,1,0,0,3,13,0,0,0,0,1,2,0
+mor146,Prado de los Santos Miguel,37,1,2,5,1,1,2,0,1,2,4,0,2,0,0,1,2,0,0,0,0,0,3,0
+mor147,Ramirez Ortiz Abel,58,1,3,3,1,1,1,0,0,0,3,0,0,0,0,0,0,0,0,1,0,0,0,0
+mor148,Ramirez Padilla Julieta Andrea,26,2,1,1,1,1,1,0,0,0,7,0,2,0,0,62,25,11,0,0,0,0,2,2
+mor149,Ramiro Alejo Brenda,31,2,2,4,1,1,1,1,0,0,5,0,1,0,0,8,2,4,0,0,1,0,1,3
+mor150,Reyes Carmona Emmanuel,34,1,1,2,1,1,2,1,1,1,6,1,1,0,0,52,17,75,0,0,1,0,3,1
+mor151,Reyes Silva Maria del Rosario,39,2,2,4,1,1,1,1,1,0,5,0,2,0,0,9,18,3,0,0,1,0,0,0
+mor152,Rincon Chanona Sonia,69,2,2,3,1,1,4,1,1,3,3,0,1,0,0,7,6,0,1,0,1,0,0,0
+mor153,Rios Cheno Bernardo,46,1,1,1,1,1,3,1,1,0,5,0,2,0,0,14,5,5,0,0,1,0,0,2
+mor154,Ritter Ocampo Klaus Uwe,29,1,2,4,1,1,1,0,0,0,4,0,2,0,0,5,16,15,0,0,0,0,1,0
+mor155,Robledo Ruiz Juan Ramiro,71,1,2,2,1,1,2,1,1,4,6,1,1,0,0,3,46,0,0,0,1,1,0,0
+mor156,Robles Gomez Manuel Alejandro,39,1,2,4,1,1,2,0,0,1,7,0,3,0,0,100,43,69,0,0,0,0,2,2
+mor157,Robles Ortiz Martha,59,2,1,5,1,1,2,1,1,1,5,0,1,0,0,17,6,2,0,0,1,0,0,0
+mor158,Rodríguez Gonzalez Manuel,54,1,1,3,1,1,2,0,1,0,2,1,0,0,0,11,6,2,0,0,0,0,2,0
+mor159,Rodriguez Torres Angel Miguel,35,1,2,5,1,1,1,0,0,0,0,6,0,1,0,6,6,1,0,0,0,0,0,0
+mor160,Rojas Martinez Beatriz,55,2,1,4,1,1,2,0,0,3,4,0,1,0,0,10,7,0,0,0,0,0,0,0
+mor161,Roman Avila Maria Guadalupe,48,2,1,5,1,1,3,1,1,0,3,0,1,0,0,11,1,10,0,0,1,0,0,2
+mor162,Saavedra Talavera Maria Teresa,67,2,3,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+mor163,Salazar Lopez Noemi,35,2,2,5,1,1,1,0,0,0,3,0,1,0,0,6,8,7,0,0,0,0,0,0
+mor164,Sanchez Barrios Carlos,64,1,1,4,1,1,1,1,1,3,4,0,1,0,0,11,5,3,1,0,1,0,1,3
+mor165,Sanchez Cruz Janeth Yareli,32,2,3,1,1,1,1,0,0,0,0,0,0,0,0,6,1,0,0,1,0,0,0,0
+mor166,Sanchez Ortiz Graciela,62,2,1,5,1,1,1,1,1,1,11,1,0,1,0,3,27,1,0,0,1,0,0,0
+mor167,Sanchez Rodriguez Juan Pablo,42,1,1,5,1,1,2,0,1,1,4,0,2,0,0,1,10,0,0,1,0,0,0,0
+mor168,Sandoval Ballesteros Pablo Amilcar,47,1,1,4,1,1,2,0,1,1,12,1,3,0,0,11,63,9,0,0,0,0,0,3
+mor169,Sandoval Soto Martin,51,1,2,5,1,1,1,0,0,0,4,0,3,0,0,27,5,3,0,0,0,0,1,4
+mor170,Santiago Chepi Azael,44,1,1,3,1,1,2,1,0,0,3,0,1,0,0,13,15,10,1,0,1,0,0,0
+mor171,Santiago Manuel Iran,36,1,2,3,1,1,1,1,1,1,3,0,1,0,0,11,12,8,0,0,1,0,2,0
+mor172,Santiago Marcos Nancy Yadira ,41,2,1,1,1,1,2,0,0,1,5,0,1,0,0,12,10,1,1,0,0,0,0,3
+mor173,Sibaja Mendoza Jorge Angel,38,1,2,3,1,1,1,1,0,1,4,0,1,0,0,9,5,3,1,0,1,0,0,0
+mor174,Sierra Damian Maria,74,2,1,3,1,1,2,0,1,1,3,0,1,0,0,2,11,1,0,0,0,0,0,0
+mor175,Silva Hernández Dulce Maria,41,2,2,4,1,1,1,0,0,0,4,0,1,0,0,4,2,8,0,0,0,0,1,0
+mor176,Tanori Cordova Judith Celina,58,2,3,1,1,1,2,0,1,0,4,0,1,0,0,4,20,3,0,1,0,0,0,0
+mor177,Tello Espinosa Claudia,57,2,1,3,1,1,1,0,0,1,6,0,1,0,0,21,13,0,0,1,0,0,0,3
+mor178,Tenorio Adame Paola,55,2,1,3,1,1,3,0,1,1,8,0,2,0,0,0,8,0,1,0,0,0,1,3
+mor179,Torres Escudero Mario Alberto,43,1,2,3,1,1,1,0,0,0,6,0,2,0,0,12,5,29,0,1,0,0,0,1
+mor180,Torres Hernández Alfredo,27,1,3,3,1,1,1,0,0,0,4,1,1,0,0,0,1,0,0,1,0,0,0,0
+mor181,Torres Navarro Juan Guadalupe,63,1,2,1,1,1,2,0,0,0,4,0,1,0,0,8,7,2,0,0,0,0,0,0
+mor182,Torres Torres Ricardo,29,1,3,5,1,1,1,0,0,0,3,0,1,0,0,0,0,0,0,1,0,0,1,0
+mor183,Torruco Garza Miguel,33,1,2,4,1,1,2,0,0,0,5,0,1,0,0,31,12,2,0,0,0,0,1,3
+mor184,Trinidad Balboa Jose Juan,38,1,3,3,1,1,0,0,1,0,2,0,1,0,0,0,0,0,0,1,0,0,0,0
+mor185,Valencia Cruz Rosalba,56,2,1,3,1,1,1,1,1,1,3,0,1,0,0,4,6,5,0,0,1,0,0,1
+mor186,Valencia Medina Alma Griselda,59,2,1,5,1,1,1,0,1,0,4,1,0,0,0,3,10,6,0,0,0,0,1,0
+mor187,Varela Lopez Victor Gabriel,48,1,1,4,1,1,2,0,0,4,7,0,2,0,0,5,16,3,0,3,0,1,2,0
+mor188,Vargas Meraz Teresita de Jesus,31,2,1,1,1,1,1,0,0,1,4,1,1,0,0,15,11,1,1,0,0,0,3,1
+mor189,Vargas Osnaya Maria Cristina,47,2,3,5,1,1,1,0,0,0,11,0,1,0,0,2,3,3,0,1,0,0,0,0
+mor190,Vazquez Arellano Manuel,33,1,2,3,1,1,1,1,0,0,8,0,3,0,0,14,19,10,0,0,1,0,0,0
+mor191,Vazquez Alvarez Brianda Aurora,31,2,1,1,1,1,1,0,0,0,6,0,2,0,0,6,8,8,0,0,0,0,0,0
+mor192,Vences Valencia Julieta Kristal,34,2,1,4,1,1,1,0,0,0,3,1,0,0,0,21,20,31,0,0,0,0,1,0
+mor193,Vidal Benavides Faustino,62,1,2,3,1,1,1,1,0,0,3,0,1,0,0,2,0,0,0,0,1,0,0,0
+mor194,Vigil Hernandez Elva Agustina,47,2,1,2,1,1,1,0,0,0,14,0,2,0,0,11,5,4,0,0,0,0,0,5
+mor195,Villa Villegas Alberto,48,1,1,1,1,1,1,0,0,1,4,0,2,0,0,16,15,20,0,0,0,0,0,0
+mor196,Villegas Guarneros Dulce Maria Corina,55,2,1,3,1,1,1,0,0,1,3,0,1,0,0,5,6,0,2,0,0,0,2,3
+mor197,Villegas Sanchez Merary,34,2,1,1,1,1,1,0,1,2,5,0,1,0,0,3,4,4,1,0,0,0,0,10
+mor198,Zamora Valdez Casimiro,62,1,1,1,1,1,3,0,1,1,3,0,2,0,0,10,3,13,0,0,0,0,0,0
+mor199,Zebadua Alva Joaquin,46,1,1,3,1,1,3,0,1,1,11,0,3,0,0,9,28,3,0,0,0,0,0,0
+mor200,Zuñiga Cuevas Maria del Carmen,55,2,3,5,1,1,4,0,1,0,4,0,2,0,0,2,4,3,0,1,0,0,1,0
+mor201,Manzo Rodriguez Carlos Alberto,36,1,1,5,1,1,1,0,1,0,4,0,1,0,0,1,17,0,0,1,0,0,1,3
+mor202,Alavez Ruiz Aleida,47,2,1,4,1,1,2,0,1,6,7,0,2,1,1,6,52,7,0,1,0,0,0,3
+mor203,Duran Ruiz Felix,53,1,3,1,1,1,1,1,0,0,3,0,1,0,0,2,7,0,0,1,1,0,1,0
+mor204,Gonzalez Robledo Erasmo,49,1,1,2,1,1,2,0,1,2,3,1,0,0,0,0,10,0,0,1,0,0,3,3
+mor205,Jimenez Ramirez Yolis,47,2,3,5,1,1,1,1,1,0,10,0,2,0,0,1,5,2,0,1,1,0,0,1
+mor206,Del Razo Montiel Steve Esteban,57,1,3,4,1,1,1,0,0,0,15,4,0,0,0,52,9,2,0,1,0,0,0,0
+mor207,Reyes Lopez Valentin,69,1,1,3,1,1,2,1,0,1,4,0,1,0,0,8,1,6,0,1,1,0,3,2
+mor208,Andazola Gomez Socorro Irma,57,2,1,1,1,1,1,0,1,1,3,0,1,0,0,17,5,4,0,1,0,0,3,0
+mor209,Chavez Treviño Andrea,24,2,1,1,1,1,1,0,0,0,7,0,2,0,0,13,31,10,0,1,0,0,0,3
+mor210,Vazquez Vazquez Alfredo,40,1,1,3,1,1,2,0,0,1,5,1,2,0,0,2,6,6,1,0,0,0,0,3
+mor211,Contreras Montes Gustavo,41,1,1,5,1,1,2,0,0,1,6,0,2,0,0,0,3,0,0,1,0,0,0,3
+mor212,Narcia Coutiño Maniel de Jesus,66,1,1,3,1,1,2,0,1,0,4,0,1,0,0,0,1,1,0,1,0,0,0,3
+mor213,Carrasco Godinez Nelly Minerva,39,2,1,5,1,1,2,1,1,1,5,1,0,0,0,12,14,8,0,1,1,0,0,4
+mor214,Valadez Bojorquez Marina,37,2,1,1,1,1,1,0,0,0,7,0,1,0,0,4,2,0,0,1,0,0,0,5
+mor215,Torres Ajuria Herminio,50,1,3,2,1,3,2,0,0,0,6,0,3,0,0,1,1,0,0,1,0,0,0,0
+mor216,Monroy Elizalde Veronica,43,2,3,5,1,2,1,0,0,0,4,0,1,0,0,1,1,1,0,1,0,0,0,0
+mor217,Colin Garcia Juan Manuel,52,1,3,4,1,3,2,0,0,0,3,0,2,0,0,0,0,0,0,1,0,0,1,0
+mor218,Perez Ramos Elena,32,2,3,3,1,3,2,0,0,0,2,0,0,0,0,0,0,0,0,1,0,0,0,0
+mor219,Montelongo Dimeo Olga Sarabel,52,2,3,2,1,2,2,0,0,0,4,0,2,0,0,1,0,0,0,1,0,0,0,0
+mor220,Lopez Fernandez Cecilio,66,1,3,1,1,2,2,0,1,0,3,0,1,0,0,0,1,0,0,1,0,0,0,0
+pri1,Onofre Vazquez Vicente Alberto,52,1,1,5,2,3,6,0,1,1,6,0,2,0,0,7,1,0,0,0,0,0,1,0
+pri2,Abramo Masso Yerico,55,1,1,2,2,1,1,0,1,2,3,1,1,0,0,19,23,7,1,0,0,0,0,3
+pri3,Aceves Garcia Norma Angelica,44,2,2,5,2,1,1,1,1,0,3,0,1,0,0,100,27,34,0,0,1,0,0,0
+pri4,Acosta Peña Brasil Alberto,51,1,1,5,2,1,1,0,1,2,3,0,2,0,0,15,15,8,0,0,0,0,1,0
+pri5,Aguilar Castillo Ricardo,51,1,2,5,2,1,1,0,1,2,4,0,1,0,0,4,4,2,0,0,0,0,0,0
+pri6,Aguilar Cifuentes Yeimi Yazmin,32,2,1,3,2,1,1,1,0,0,4,0,1,0,0,2,9,4,0,0,1,0,1,3
+pri7,Aguirre Maldonado Maria de Jesus,49,2,1,2,2,1,1,1,1,2,4,1,1,0,0,27,28,27,1,0,1,0,0,2
+pri8,Alcala Ruiz Blanca Maria del Socorro,49,2,2,4,2,1,1,1,1,3,5,2,2,1,0,25,35,11,0,0,1,0,1,0
+pri9,Alcantara Rojas Maria Guadalupe,73,1,2,4,2,1,1,1,0,1,3,0,1,0,0,4,2,0,0,0,1,0,1,0
+pri10,Angulo Briceño Pablo Guillermo,31,1,2,3,2,1,1,1,0,1,5,1,0,0,0,0,6,0,0,0,1,0,2,0
+pri11,Arcos Velazquez Montserrat Alicia,39,2,2,2,2,1,1,0,1,2,3,2,0,0,0,6,10,1,0,0,0,0,2,0
+pri12,Ayala Villalobos Karla,22,2,1,5,2,1,1,0,0,0,3,1,0,0,0,18,14,7,1,0,0,0,1,0
+pri13,Azuara Yarzabal Frinne,65,2,2,2,2,1,1,0,1,0,4,0,1,0,0,9,29,16,0,0,0,0,1,0
+pri14,Barrera Fortoul Laura,45,2,2,5,2,1,1,1,1,3,4,0,2,0,0,2,12,9,0,0,1,0,2,0
+pri15,Barron Perales Karina Marlen,42,2,1,2,2,1,1,0,1,2,3,0,1,0,0,24,11,18,0,0,0,0,1,0
+pri16,Bernal Bolnik Sue Ellen,39,2,1,5,2,1,1,0,1,2,7,0,2,1,0,7,74,4,1,0,0,1,0,0
+pri17,Bueno Zertuche Jaime,47,1,1,2,2,1,1,1,1,0,3,0,2,0,0,20,20,30,1,0,1,0,0,3
+pri18,Camarena Jauregui Maria del Refugio ,33,2,1,2,2,1,1,0,0,0,3,1,0,0,0,16,18,22,0,0,0,0,2,0
+pri19,Campos Huirache Adriana,43,2,1,5,2,1,1,0,1,1,3,0,1,0,0,5,19,16,0,0,0,0,0,3
+pri20,Cantu Ramirez Andres Mauricio,50,1,1,2,2,1,1,0,1,1,3,0,1,0,0,6,11,10,1,0,0,0,0,3
+pri21,Cardenas Monroy Oscar Gustavo,68,1,1,5,2,1,1,0,1,4,3,0,1,0,0,24,5,2,0,0,0,0,0,0
+pri22,Cardona Ortiz Alma Patricio,40,2,3,2,2,1,1,0,1,0,3,0,1,0,0,0,0,0,1,1,0,0,0,0
+pri23,Carvajal Isunza Sofia,56,2,2,2,2,1,1,1,0,0,4,0,1,0,0,8,13,14,0,0,1,0,3,0
+pri24,Casique Zarate Javier,54,1,2,5,2,1,1,0,1,1,4,0,2,0,0,24,21,18,0,0,0,0,1,0
+pri25,Castañeda Narvarte Marcelino,56,1,1,4,2,2,2,0,0,0,5,0,3,0,0,15,116,11,0,0,0,0,0,3
+pri26,Castellanos Ramirez Alan,35,1,1,5,2,1,1,0,1,0,3,0,1,0,0,17,8,29,1,0,0,0,0,3
+pri27,Cruz Mendoza Eufrosina,42,2,2,3,2,1,2,1,1,2,3,0,1,0,0,10,22,5,1,0,1,0,0,0
+pri28,Davila Ramirez Carolina,34,2,1,2,2,2,2,0,0,2,3,0,2,0,0,10,7,1,1,0,0,0,2,0
+pri29,de la Torre Valdez Yolanda,57,2,2,1,2,1,1,0,1,3,4,0,1,0,0,41,17,24,1,1,0,0,1,13
+pri30,Diaz Tejeda Nelida Ivonne Sabrina,53,2,2,1,2,1,1,0,0,1,3,0,1,0,0,22,23,51,0,0,0,0,0,0
+pri31,Espinoza Eguia Juan Francisco,49,1,1,2,2,1,1,1,1,1,3,0,2,0,0,5,15,9,1,0,1,0,1,0
+pri32,Fuentes Avila Rodrigo ,50,1,2,2,2,1,1,1,1,1,4,0,1,0,0,1,6,0,0,1,1,0,0,0
+pri33,Garza Ochoa Jose Luis,57,1,1,2,2,1,1,0,1,1,3,0,1,0,0,5,3,0,0,0,0,0,0,3
+pri34,Gomez Villanueva Augusto,92,1,2,4,2,1,1,0,1,8,5,1,1,1,0,1,37,1,0,0,0,0,3,0
+pri35,Gonzalez Zirion Xavier,53,1,1,4,2,1,1,1,0,0,4,0,1,0,0,5,10,1,1,0,1,0,0,1
+pri36,Guajardo Villareal Ildefonso,64,1,2,2,2,1,1,0,1,3,3,0,1,0,0,0,27,0,0,0,0,0,1,0
+pri37,Guerra Castillo Marcela,62,2,1,2,2,1,1,1,1,4,0,0,0,1,0,26,44,37,1,0,1,0,2,0
+pri38,Guerrero Esquivel Fuensanta Guadalupe,25,2,2,2,2,1,1,0,0,0,0,0,0,1,0,10,5,15,1,0,0,0,0,0
+pri39,Gutierrez Jardon Jose Antonio,55,1,1,2,2,1,1,1,1,0,5,0,1,0,0,13,7,5,0,0,1,0,0,0
+pri40,Haro Ramirez Laura Lorena,34,2,2,1,2,1,1,0,1,0,3,0,1,0,0,34,14,32,0,0,0,0,0,4
+pri41,Hernandez Deras Ismael Alfredo,57,1,2,1,2,1,1,0,1,7,3,0,1,0,0,7,12,9,0,0,0,0,2,3
+pri42,Hernandez Perez Johana Montcerrat,32,2,2,5,2,1,1,0,0,9,5,0,3,0,0,1,11,1,0,0,0,0,1,3
+pri43,Hernandez Zetina Hiram,27,1,2,1,2,1,1,0,0,0,5,0,1,0,0,9,13,4,1,0,0,0,1,0
+pri44,Herrera Anzaldo Ana Lilia,50,2,1,5,2,1,1,0,1,4,3,1,1,0,0,30,16,93,0,0,0,1,0,0
+pri45,Iriarte Mercado Carlos,54,1,2,5,2,1,1,0,1,2,4,0,1,0,0,3,10,0,0,0,0,0,1,0
+pri46,Jaimes Albarran Jazmin,36,2,1,5,2,1,1,0,1,0,4,0,1,0,0,5,9,0,1,0,0,0,1,0
+pri47,Jimenez Aquino Lazarao Cuauhtemoc,48,1,2,4,2,1,1,0,1,0,3,0,1,0,0,10,14,6,0,0,0,0,2,3
+pri48,Lopez Castro Cynthia Iliana,34,2,2,4,2,1,1,1,1,3,3,0,2,0,0,11,30,5,0,0,1,0,4,0
+pri49,Lopez Garcia Roberto Carlos,47,1,1,5,2,1,1,1,1,1,7,0,4,0,0,3,21,2,1,0,1,0,0,0
+pri50,Medina Ramirez Tereso,58,1,2,2,2,1,1,0,1,4,3,0,1,0,0,0,5,1,1,0,0,0,0,0
+pri51,Mendoza Bustamante Marco Antonio,35,1,2,5,2,1,1,0,0,0,2,0,3,1,0,29,20,11,0,0,0,0,4,3
+pri52,Moreira Valdez Ruben Ignacio,58,1,2,2,2,1,1,0,1,2,11,1,2,0,1,102,12,55,1,0,0,0,1,0
+pri53,Moreno Cardenas Rafael Alejandro,46,1,2,4,2,1,1,0,1,4,4,1,0,0,0,3,5,0,0,0,0,0,4,0
+pri54,Murat Hinojosa Eduardo Enrique,41,1,2,4,2,1,1,0,0,1,3,0,1,0,0,23,9,9,0,0,0,0,1,0
+pri55,Nassar Piñeyro Mariana Erandi,37,2,2,3,2,1,1,0,1,0,4,0,1,0,0,13,14,22,0,1,0,0,0,6
+pri56,Peraza Ramirez Mario Xavier,40,1,1,3,2,3,2,0,1,0,3,0,1,0,0,1,22,1,0,0,0,0,0,3
+pri57,Piñon Rivera Lorena,37,2,2,3,2,1,1,0,1,0,5,0,3,0,0,15,20,10,1,0,0,0,0,0
+pri58,Rodriguez Muñoz Reynel,49,1,1,3,2,1,1,1,1,0,8,0,3,0,0,5,18,4,0,0,1,0,0,0
+pri59,Ruiz Sandoval Cristina,48,2,2,5,2,1,1,0,1,2,8,0,2,0,0,2,26,3,0,0,0,0,0,0
+pri60,Samano Peralta Miguel,55,1,1,5,2,1,1,0,1,4,4,0,1,0,0,11,17,7,0,0,0,0,0,0
+pri61,Sanchez Ramos Paloma,36,2,2,1,2,1,1,0,1,0,4,0,1,0,0,21,12,9,0,0,0,0,0,3
+pri62,Serrano Maldonado Maria Elena,63,2,2,5,2,1,1,1,0,0,3,0,1,0,0,9,10,2,1,0,1,0,0,0
+pri63,Treviño Badillo Norma Graciela,55,2,3,3,2,1,1,1,1,0,3,0,1,0,0,0,2,1,0,1,1,0,0,0
+pri64,Vargas Camacho Melissa Estefania,41,2,1,5,2,1,1,0,1,0,3,0,1,0,0,28,29,14,0,0,0,0,0,2
+pri65,Vargas Rodriguez Sayonara,51,2,1,5,2,1,1,0,1,0,4,0,2,0,0,25,17,22,1,0,0,0,0,0
+pri66,Viggiano Austria Alma Carolina,53,2,2,5,2,1,1,0,1,4,6,1,3,0,0,19,43,9,0,0,0,0,0,6
+pri67,Villaseñor Davila Maribel Guadalupe,38,2,1,4,2,1,1,0,0,0,3,0,1,0,0,0,0,0,1,0,0,0,2,0
+pri68,Zarzosa Sanchez Eduardo,47,1,1,5,2,1,1,0,1,3,8,0,3,0,0,4,25,0,0,0,0,0,2,2
+pri69,Amezcua Gonzalez Cristina,43,2,1,2,2,1,1,0,1,1,3,0,1,0,0,2,9,2,0,1,0,0,0,4
+pri70,Sanchez Escobedo Maria Jose,26,2,3,1,2,1,1,0,0,0,3,0,1,0,0,5,3,2,0,1,0,0,0,0
+pri71,Yunes Zorrilla Jose Francisco,51,1,1,3,2,1,1,0,1,5,4,0,2,0,0,3,26,0,0,1,0,1,0,4
+pri72,Jimenez Rodirguez Raul,38,1,3,4,2,2,2,0,0,0,0,0,0,0,0,3,0,0,0,1,0,0,0,0
+pri73,Diaz Montero Rodrigo Manuel,32,1,3,3,2,3,2,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+prd1,Chavez Flores Maria Macarena,54,2,1,5,3,1,2,0,1,2,4,0,3,1,0,26,18,20,0,0,0,0,3,3
+prd2,Chavez Ruiz Hector,37,1,2,5,3,1,1,0,0,0,4,0,1,0,0,17,18,0,0,0,0,0,2,3
+prd3,Diaz Acevedo Edna Gisel,36,2,2,5,3,1,1,1,1,0,7,1,1,0,0,10,67,24,0,0,1,0,0,0
+prd4,Espinoza Morales Olga Luz,45,2,2,3,3,1,1,0,1,2,4,0,2,1,0,37,57,24,0,0,0,0,1,2
+prd5,Huacus Esquivel Francisco Javier,35,1,1,5,3,3,2,0,1,1,5,0,2,0,1,11,31,3,1,0,0,0,0,0
+prd6,Perez Valdez Elizabeth,43,2,2,4,3,1,1,0,0,0,8,1,0,1,0,61,122,18,0,0,0,0,0,0
+prd7,Prieto Gomez Mauricio,47,1,1,5,3,1,1,0,0,1,3,0,2,0,0,9,18,2,0,1,0,0,2,0
+prd8,Rafael Dircio Fabiola,40,2,1,4,3,1,1,1,1,1,3,0,1,0,0,16,43,28,0,0,1,0,0,0
+prd9,Rodriguez Sarabia Leslie Estefania,23,2,2,1,3,1,1,0,1,0,4,0,2,0,0,2,15,13,0,0,0,0,1,3
+prd10,Sodi Miranda Ana Cecilia Luisa Gabriela Fernanda,62,2,1,4,3,1,3,1,0,0,5,1,0,0,0,90,73,62,0,0,1,0,0,0
+prd11,Torres Rosales Miguel Angel,58,1,2,2,3,1,1,0,1,0,3,0,3,0,0,10,37,4,0,0,0,0,0,3
+prd12,Velazquez Flores Jesus Alberto,47,1,3,3,3,1,1,0,0,1,3,0,3,0,0,16,12,6,0,0,0,0,0,0
+pan1,Ramos Juarez Adela,54,2,1,3,4,3,2,0,0,0,5,0,2,0,0,1,6,0,0,0,0,2,0,0
+pan2,Aceves Sanchez Erandi Alejandro,53,1,3,2,4,1,1,0,0,0,3,0,2,0,0,0,1,0,0,1,0,0,0,0
+pan3,Aguilar Coronado Marco Humberto,58,1,1,4,4,1,1,0,1,4,5,0,2,1,0,2,25,3,1,0,0,0,3,0
+pan4,Alcantar Ortega Salvador,68,1,3,1,4,1,1,1,1,0,3,0,2,0,0,21,6,21,0,1,1,0,0,0
+pan5,Almaraz Smer Oscar de Jesus,53,1,1,2,4,1,2,0,1,1,3,0,1,0,0,55,5,22,0,0,0,0,2,3
+pan6,Almendariz Puppo Marco Antonio,44,1,1,1,4,1,1,0,1,1,3,0,2,0,0,4,5,12,0,0,0,0,0,0
+pan7,Alvarez Hernandez Daniela Soraya ,38,2,1,1,4,1,1,0,1,1,3,0,1,0,0,19,13,41,0,0,0,0,0,0
+pan8,Aranda Orozco Ana Teresa ,67,2,1,4,4,1,1,0,1,1,3,0,1,0,0,8,12,2,0,0,0,0,0,3
+pan9,Azuara Zuñiga Xavier,42,1,2,2,4,1,1,0,1,3,3,0,2,0,0,6,9,2,1,0,0,0,1,0
+pan10,Baez Guerrero Jose Luis,40,1,2,2,4,1,1,0,1,1,3,0,1,0,0,21,1,27,0,1,0,0,2,0
+pan11,Balderas Hernandez Itzel Josefina,45,2,1,2,4,1,1,0,1,0,5,0,1,0,0,37,19,12,0,0,0,0,1,0
+pan12,Balderas Trejo Ana Maria ,53,2,1,5,4,1,1,0,1,1,3,1,0,0,0,3,12,2,0,0,0,0,0,1
+pan13,Beauregard Martinez Carolina,37,2,1,4,4,1,1,0,0,1,4,1,1,0,0,24,27,9,0,0,0,0,1,0
+pan14,Becerra Moreno Monica ,49,2,1,2,4,1,1,0,1,1,3,0,1,0,0,11,4,13,1,0,0,0,1,3
+pan15,Bollo Pinelo Kathia Maria,44,2,2,3,4,1,1,0,1,0,3,0,2,0,0,9,10,0,0,0,0,0,0,3
+pan16,Castell de Oro Palacios Maria Teresa,52,2,1,5,4,1,1,1,0,0,3,0,1,0,0,30,31,12,1,0,1,0,1,0
+pan17,Castrellon Garza Francisco Javier,50,1,1,1,4,1,1,0,1,0,3,0,1,0,0,6,1,7,0,0,0,0,0,0
+pan18,Castro Narvaez Marco Antonio,60,1,3,2,4,1,1,0,1,0,3,0,1,0,0,0,2,0,0,1,0,0,0,0
+pan19,Chale Cauich Sergio Enrique,51,1,1,3,4,1,1,1,1,0,3,0,1,0,0,10,7,3,0,0,1,0,0,0
+pan20,Cifuentes Negrete Roman,55,1,2,2,4,1,1,0,1,0,5,0,1,0,0,23,31,61,0,0,0,0,0,0
+pan21,Compean Fernandez Eliseo,42,1,2,1,4,1,1,0,1,1,3,0,1,0,0,5,1,7,0,0,0,0,1,0
+pan22,Contreras Duarte Laura Patricia,40,2,1,1,4,1,1,0,1,0,3,0,1,0,0,13,13,6,0,0,0,0,0,0
+pan23,Cordero Gonzalez Wendy Maricela,30,2,1,2,4,1,1,0,1,0,3,0,1,0,0,6,4,6,0,0,0,0,0,3
+pan24,Diaz Villalon Erika de los Angeles,49,2,1,2,4,1,1,0,1,0,3,0,1,0,0,8,10,1,0,0,0,0,0,0
+pan25,Escudero Fabre Maria del Carmen,52,2,2,3,4,1,1,1,1,2,3,0,1,0,0,10,10,0,0,0,1,0,0,0
+pan26,Espadas Galvan Jorge Arturo,56,1,1,2,4,1,1,0,1,1,4,0,2,0,0,19,59,31,0,0,0,0,0,3
+pan27,Felipe Torres Joanna Alejandra,37,2,1,5,4,1,1,0,0,0,3,0,1,0,0,176,33,15,0,0,0,0,0,3
+pan28,Figueroa Reyes Rene,40,1,3,5,4,1,1,0,1,0,3,0,1,0,0,1,6,0,0,1,0,0,0,0
+pan29,Flores Vazquez Martín Alejandro,35,1,3,2,4,1,1,0,1,0,2,0,2,0,0,0,1,1,0,1,0,0,0,0
+pan30,Galarza Castro Yesenia,40,2,2,4,4,1,1,0,0,0,3,0,1,0,0,17,19,17,1,0,0,0,3,0
+pan31,Gamboa Torales Maria Josefina,44,2,1,3,4,1,1,0,1,2,4,0,2,0,0,8,10,5,1,0,0,0,1,0
+pan32,Garcia Astorga Carlos Fernando,46,1,3,2,4,1,1,0,1,0,3,0,1,0,0,4,2,4,0,1,0,0,0,0
+pan33,Garcia Velasco Anabey,43,2,2,5,4,1,1,0,1,0,3,0,1,0,0,13,12,2,0,0,0,0,1,0
+pan34,Garza Treviño Pedro,64,1,1,2,4,1,1,1,1,0,3,0,2,0,0,0,0,0,1,0,1,0,0,0
+pan35,Godinez del Rio Enrique ,51,1,1,5,4,1,1,0,0,0,3,0,1,0,0,11,20,30,0,0,0,0,0,0
+pan36,Gomez Cardenas Annia Sarahi,38,2,1,2,4,1,1,1,0,1,3,1,0,0,0,10,21,14,1,0,1,0,1,0
+pan37,Gomez del Campo Gurza Mariana,43,2,2,4,4,1,1,0,0,5,4,1,2,0,0,23,53,79,1,0,0,0,3,0
+pan38,Gonzalez Alonso Carmen Rocio,40,2,1,1,4,1,1,0,1,2,3,1,0,0,0,8,15,8,1,0,0,0,0,0
+pan39,Gonzalez Azcarraga Rosa Maria,51,2,1,2,4,1,1,0,1,1,5,1,1,0,0,7,10,13,0,0,0,0,0,3
+pan40,Gonzalez Cruz Karla Veronica,45,2,3,3,4,1,1,0,0,2,4,0,1,0,0,12,9,15,0,1,0,0,2,0
+pan41,Gonzalez Marquez Karen Michel,33,2,1,3,4,1,1,0,1,1,3,0,1,1,0,25,12,9,0,0,0,0,3,0
+pan42,Gonzalez Rivera Maria Elena,50,2,3,1,4,1,1,0,1,1,3,0,1,0,0,4,1,8,0,1,0,0,0,0
+pan43,Gonzalez Urrutia Wendy,45,2,1,4,4,1,1,0,1,1,4,0,1,0,0,7,15,1,0,0,0,0,0,0
+pan44,Gonzalez Zepeda Javier,37,1,1,5,4,1,1,0,1,1,3,0,1,0,0,6,15,1,0,0,0,0,0,3
+pan45,Gudiño Magaña Omar Francisco,42,1,3,5,4,1,1,0,0,0,3,0,2,0,0,1,0,0,0,1,0,0,0,0
+pan46,Guevera Rodriguez Miguel Angel,41,2,3,4,4,1,1,0,1,0,0,0,0,0,0,4,0,0,0,1,0,0,1,0
+pan47,Gutierrez Valdez Maria de los Angeles,59,2,1,1,4,1,1,1,1,1,3,1,0,1,0,27,23,10,0,0,1,0,0,0
+pan48,Gutierrez Valtierra Diana Estefania,30,2,2,2,4,1,1,0,1,0,4,0,1,1,0,17,13,19,1,0,0,0,2,0
+pan49,Huerta Ling Guillermo Octavio,51,1,2,4,4,1,1,0,1,1,3,0,1,0,0,13,23,4,1,0,0,0,0,0
+pan50,Huerta Villegas Genovea,40,2,2,4,4,1,1,0,1,1,3,0,1,0,0,34,13,11,1,0,0,0,1,0
+pan51,Inzunza Armas Jorge Ernesto,65,1,2,5,4,1,1,0,0,2,3,1,0,0,0,7,20,0,1,0,0,0,0,0
+pan52,Jimenez Angulo Julia Licet,44,2,2,5,4,1,1,0,1,1,5,0,1,0,0,2,8,0,1,0,0,0,0,0
+pan53,Juarez Navarrete Berenice,42,2,1,5,4,1,1,0,1,0,3,0,1,0,0,9,14,4,0,0,0,0,0,0
+pan54,Lara Carreon Diana Maria Teresa,36,2,1,4,4,1,1,0,0,0,4,0,2,0,0,7,11,14,1,0,0,0,0,0
+pan55,Lixa Abimerhi Jose Elias,34,1,2,3,4,1,1,0,1,2,7,0,3,0,1,16,97,3,1,0,0,0,0,0
+pan56,Lopez Sosa Mariela,58,2,2,2,4,1,1,1,1,0,3,0,1,0,0,43,4,28,0,0,1,0,0,3
+pan57,Loyola Vera Ignacio,67,1,1,2,4,1,1,1,1,0,4,0,2,0,0,5,23,16,0,0,1,0,1,0
+pan58,Luna Ayala Noemi Berenice,37,2,2,2,4,1,1,0,0,2,6,0,3,1,0,32,21,50,1,0,0,0,1,0
+pan59,Macias Zambrano Gustavo,52,1,1,1,4,1,1,0,1,1,3,0,2,0,0,9,5,29,0,0,0,0,1,0
+pan60,Madrazo Limon Carlos,69,1,1,5,4,1,1,1,1,4,4,0,2,0,0,12,16,1,0,0,1,0,1,3
+pan61,Mancillas Cabrera Mariana,49,2,2,2,4,1,1,0,0,0,3,0,1,0,0,10,7,13,0,0,0,1,1,4
+pan62,Mandujano Tinajero Esther,50,2,1,2,4,1,1,0,0,0,3,0,1,0,0,5,13,26,1,0,0,0,0,0
+pan63,Martinez Lopez Paulo Gonzalo,44,1,1,2,4,1,1,0,1,0,3,0,1,0,0,6,17,4,1,0,0,0,0,3
+pan64,Mata Artilano Noel,55,1,1,2,4,1,1,0,1,0,3,0,1,0,0,5,10,0,0,0,0,0,0,0
+pan65,Mata Lozano Lizbeth,37,2,2,1,4,1,1,0,1,2,3,1,0,1,0,6,21,12,0,0,0,0,0,0
+pan66,Maturino Manzanera Juan Carlos,42,1,2,1,4,1,1,0,0,1,3,0,1,1,0,7,20,6,0,0,0,0,0,0
+pan67,Monraz Ibarra Miguel Angel,48,1,2,1,4,1,1,0,1,3,3,0,2,0,0,20,11,79,1,0,0,0,0,3
+pan68,Montes Estrada Berenice,43,2,1,2,4,1,1,0,1,0,3,0,1,0,0,16,15,20,0,0,0,0,1,3
+pan69,Murillo Manriquez Sonia,49,1,2,1,4,1,1,0,1,0,3,0,1,0,0,9,18,19,0,0,0,0,0,1
+pan70,Nuñez Ceron Sarai,42,2,1,2,4,1,1,0,1,0,4,0,1,0,0,19,16,59,1,0,0,0,0,3
+pan71,Nuñez Meneses Ali Sayuri,27,2,1,5,4,3,2,0,0,0,3,0,1,0,0,0,9,0,1,0,0,0,2,4
+pan72,Olvera Corolnel Lilia Caritinia ,57,2,2,4,4,1,1,1,1,1,4,0,1,1,0,9,21,4,0,0,1,0,0,0
+pan73,Olvera Higuera Claudia Gabriela,54,2,1,5,4,3,1,0,0,0,3,0,1,0,0,4,8,0,0,0,0,0,0,0
+pan74,Oranday Aguirre Nora Elva,61,2,2,2,4,1,1,1,0,0,3,0,1,0,0,6,6,3,0,0,1,0,4,0
+pan75,Perez Jaen Zermeño Maria Elena,61,2,3,2,4,1,2,0,0,0,3,0,1,0,0,16,16,15,0,1,0,0,0,0
+pan76,Quadri de la Torre Gabriel Ricardo,67,1,1,4,4,1,2,0,1,0,3,0,1,0,0,19,23,1,1,0,0,1,0,0
+pan77,Ramirez Barba Ector Jaime,65,1,1,2,4,1,1,1,1,2,6,0,2,0,0,26,45,84,1,0,1,0,2,3
+pan78,Rendon Garcia Cesar Augusto,44,1,3,2,4,1,1,0,1,1,3,0,2,0,0,0,1,0,0,1,0,0,0,0
+pan79,Reza Gallegos Rocio Esmeralda,53,2,2,1,4,1,1,0,1,1,3,0,2,0,0,22,22,8,0,0,0,0,0,0
+pan80,Riestra Piña Mario Gerardo,39,1,1,4,4,1,1,0,1,1,3,0,2,0,0,48,33,43,0,0,0,0,1,3
+pan81,Rivera Gutierrez Riult,40,1,1,5,4,1,1,0,0,1,4,0,1,0,0,17,18,5,0,0,0,0,1,3
+pan82,Rocha Acosta Sonia,43,2,1,2,4,1,1,0,1,3,5,0,1,0,0,4,24,5,0,0,0,0,1,0
+pan83,Rodarte de Lara Miguel Humberto,44,1,3,4,4,1,1,0,0,0,4,0,2,0,0,1,14,6,0,1,0,0,0,0
+pan84,Rodriguez Rivera Ivan Arturo,47,1,1,5,4,3,1,0,1,0,4,1,2,0,0,13,13,0,0,0,0,0,1,3
+pan85,Rodriguez Vallejo Alma Cristina,39,2,3,2,4,1,1,0,1,0,3,0,1,0,0,4,5,2,0,1,0,0,1,0
+pan86,Romero Herrera Jorge,42,1,2,4,4,1,1,0,1,3,0,0,0,0,1,3,14,0,1,0,0,0,1,0
+pan87,Romero Hicks Juan Carlos,66,1,1,2,4,1,1,0,1,4,3,1,1,0,0,3,16,6,0,0,0,0,0,0
+pan88,Romero Velazquez Krishna Karina,25,2,1,5,4,1,1,0,1,0,4,0,2,0,0,28,14,4,0,0,0,0,0,3
+pan89,Romo Cuellas Martha Estela,36,2,1,1,4,1,1,0,0,1,5,0,4,0,0,28,52,0,0,0,0,0,3,0
+pan90,Rubio Fernandez Paulina,38,2,2,1,4,1,1,0,1,0,5,0,2,0,0,40,40,25,1,0,0,0,0,0
+pan91,Salgado Almaguer Pedro,48,1,1,2,4,1,1,0,1,0,3,1,2,0,0,9,5,19,0,0,0,0,0,0
+pan92,Sanchez Velazquez Ana Laura,33,2,1,1,4,1,1,0,0,0,3,0,1,0,0,6,12,14,0,0,0,0,0,0
+pan93,Sanchez Zepeda Rodrigo,56,1,1,5,4,1,1,1,1,0,3,0,3,0,0,0,17,1,1,0,1,0,0,0
+pan94,Serrato Castell Luis Gerardo,46,1,2,1,4,1,1,0,1,2,4,0,1,0,0,0,0,0,0,1,0,0,0,10
+pan95,Solorzano Gallego Marcia,51,2,1,2,4,1,1,0,1,0,3,0,1,0,0,6,10,3,0,0,0,0,1,0
+pan96,Sosa Gutierrez Enrique Gerardo,39,1,3,2,4,1,1,0,0,0,3,0,1,0,0,0,2,0,0,1,0,0,0,1
+pan97,Tejeda Cid Armando,36,1,2,5,4,1,1,0,1,1,4,1,1,0,0,11,6,1,1,0,0,0,1,0
+pan98,Tellez Hernandez Hector Saul,47,1,1,4,4,1,1,0,0,1,6,0,1,0,0,28,39,62,0,0,0,0,1,0
+pan99,Terrazas Baca Patricia,54,2,2,1,4,1,1,1,1,0,2,1,0,0,0,5,51,0,0,0,1,0,0,0
+pan100,Tinajero Robles Desiderio,67,1,1,1,4,1,1,0,1,0,3,0,1,0,0,2,8,3,0,0,0,0,0,0
+pan101,Torreblanca Engell Santiago,39,1,2,4,4,1,1,0,0,1,3,0,1,0,0,7,22,2,0,0,0,0,0,0
+pan102,Tovar Vargas Jose Salvador ,34,1,3,2,4,1,1,0,1,0,3,0,1,0,0,5,4,2,0,1,0,0,0,0
+pan103,Triana Tena Jorge,45,1,1,4,4,1,1,0,1,3,3,0,1,0,0,12,76,6,1,0,0,0,1,0
+pan104,Valenzuela Corral Roberto,48,1,2,2,4,3,2,1,0,0,5,0,1,0,0,1,8,4,1,0,1,0,0,0
+pan105,Valenzuela Gonzalez Carlos Alberto,48,1,2,3,4,1,1,0,1,1,3,0,2,0,0,3,19,4,0,0,0,0,2,0
+pan106,Valenzuela Sanchez Ana Laura,29,2,2,4,4,1,1,0,0,0,3,1,1,0,0,32,9,29,1,0,0,0,0,0
+pan107,Varela Pinedo Miguel Angel,33,1,1,2,4,1,1,0,1,0,3,0,1,0,0,15,11,6,0,0,0,0,1,3
+pan108,Villarreal Garcia Ricardo,40,1,1,2,4,1,1,0,1,2,4,1,1,0,0,5,19,5,1,0,0,0,5,0
+pan109,Zapata Meraz Jose Antonio,39,1,1,2,4,1,1,0,1,1,3,0,1,0,0,22,14,3,0,0,0,0,0,0
+pan110,Zavala Gomez del Campo Margarita Ester ,54,2,1,4,4,1,1,0,1,2,3,0,1,0,0,37,55,22,1,0,0,0,1,0
+pan111,Zavala Peniche Maria Beatriz,64,2,3,3,4,1,1,0,1,6,3,0,1,0,0,2,3,0,0,1,0,0,0,0
+pan112,Zepeda Martinez Leticia,45,2,2,5,4,1,1,0,1,2,3,0,2,0,0,32,19,19,0,0,0,0,0,2
+pan113,Torres Graciano Fernando,51,1,1,2,4,1,1,0,0,4,4,0,2,0,0,5,10,0,1,1,0,0,0,3
+pan114,Verastegui Ostos Vicente Javier,57,1,1,2,4,1,2,1,1,2,3,0,1,0,0,0,0,0,0,1,1,0,3,3
+pan115,Azar Figueroa Anuar Roberto,41,1,2,5,4,1,1,0,1,2,3,0,1,0,0,34,6,0,0,1,0,0,2,3
+pan116,Perez Diaz Victor Manuel,52,1,2,2,4,1,1,0,1,2,2,1,0,0,0,17,8,2,1,1,0,0,0,3
+pan117,Castillo Olivares Hector Israel,46,1,1,2,4,1,1,0,1,1,3,0,2,0,0,26,11,58,0,1,0,0,0,3
+pan118,Campuzano Gonzalez Gina Gerardina,55,2,1,1,4,1,1,0,1,2,4,0,1,0,0,43,16,51,0,1,0,0,0,3
+pan119,Quintana Martinez Carlos Humberto,41,1,1,5,4,1,1,0,0,2,3,0,2,0,0,6,3,0,0,1,0,0,1,3
+pan120,Mendoza Acevedo Luis Alberto,41,1,1,4,4,1,1,0,1,2,3,1,0,0,0,22,6,30,0,1,0,0,0,3
+pan121,Peña Flores Gerardo,51,1,2,2,4,1,1,0,1,1,4,0,3,0,0,49,14,16,0,1,0,0,0,8
+pan122,Creel Miranda Santiago,66,1,1,2,4,1,1,0,1,4,0,0,0,1,0,0,22,0,0,1,0,0,0,5
+pan123,Esquivel Arrona Ana Maria ,65,2,1,2,4,1,1,0,1,1,3,0,1,0,0,15,10,27,0,1,0,0,0,5
+pan124,Morales Flores Jesus Fernando,58,1,3,1,4,1,1,0,1,1,3,0,1,0,0,2,7,1,0,1,0,0,1,0
+pan125,Macias Olvera Felipe Fernando,35,1,1,2,4,1,1,0,1,1,3,1,0,0,0,8,18,0,0,1,0,0,1,4
+pan126,Patron Laviada Cecilia Anunciacion,50,2,1,3,4,1,1,0,1,1,3,0,1,0,0,41,10,14,0,0,0,0,2,4
+mc1,Adams Pereyra Olga Zulema ,51,2,1,1,5,3,2,0,1,0,4,0,1,0,0,5,9,0,0,0,0,0,0,0
+mc2,Rabelo Estrada Karla Maria,37,2,1,3,5,3,2,0,1,1,4,0,2,0,0,6,7,3,0,0,0,0,4,0
+mc3,Aguado Romero Paulina,40,2,2,2,5,3,2,0,1,0,5,0,2,0,0,17,15,0,0,0,0,0,0,0
+mc4,Alvarez Solis Maria Asencion,60,2,1,1,5,1,1,1,1,0,3,0,2,0,0,11,30,2,0,0,1,0,2,0
+mc5,Armentia Lopez Pedro,36,1,2,3,5,3,2,0,1,0,7,0,3,0,0,8,7,9,0,0,0,0,0,0
+mc6,Avila Garcia Vania Roxana,41,2,3,4,5,1,1,0,0,1,0,0,0,1,0,4,5,15,0,1,0,0,0,0
+mc7,Banquells Nuñez Maria del Rocio ,53,2,1,4,5,3,2,1,0,0,5,0,2,0,0,7,19,4,1,0,1,0,1,0
+mc8,Barrera Sepulveda Sergio,38,1,1,1,5,1,1,0,1,0,5,0,2,0,0,12,28,13,1,0,0,0,0,3
+mc9,Basava Alanis Agustin Carlos,38,1,2,2,5,1,1,0,0,0,3,0,2,0,0,4,2,1,0,1,0,0,0,5
+mc10,Castañeda Gonzalez Omar Enrique,42,1,1,1,5,3,3,0,1,0,6,1,4,0,0,66,31,12,0,0,0,0,4,4
+mc11,Chavez Perez Maria Leticia,53,2,1,1,5,1,1,0,1,0,4,0,2,0,0,12,30,2,0,0,0,0,1,0
+mc12,De la Garza Garza Arturo Bonifacio,33,1,2,2,5,1,1,0,0,1,4,0,1,0,0,1,8,0,0,0,0,0,0,0
+mc13,Fernandez Castillo Horacio,62,1,1,1,5,1,1,1,0,0,4,0,1,0,0,2,0,0,0,0,1,0,4,1
+mc14,Flores Gomez Mirza,48,2,2,1,5,1,1,0,0,1,3,0,2,0,1,34,58,12,0,0,0,0,1,3
+mc15,Garcia Medina Amalia Dolores,59,2,2,2,5,1,5,0,1,5,4,0,2,1,0,23,40,27,0,0,0,0,0,0
+mc16,Garza Marin Jose Mauro,42,1,1,1,5,1,1,1,1,0,3,0,2,0,0,8,13,15,0,0,1,0,1,0
+mc17,Herrera Vega Manuel Jesus,49,1,1,1,5,1,1,1,1,0,3,0,2,0,0,3,22,2,0,0,1,0,1,3
+mc18,Leon Garcia Carlos Alberto,47,1,3,1,5,1,1,0,1,1,1,0,0,0,0,0,9,3,0,1,0,0,0,0
+mc19,Limon Garcia Maria Elena,58,2,2,1,5,1,1,0,1,0,4,1,1,0,0,14,45,19,0,0,0,0,1,0
+mc20,Lopez Ochoa Mijares Braulio,31,1,2,3,5,1,1,0,0,0,7,0,2,0,1,25,41,32,0,0,0,0,0,0
+mc21,Martinez Cosio Elvia Yolanda,63,2,2,1,5,1,1,1,0,0,5,0,2,0,0,29,43,18,0,0,1,0,0,0
+mc22,Mejia Ibañez Julieta,51,2,2,1,5,1,1,0,0,1,3,0,2,0,0,16,42,3,0,0,0,0,0,3
+mc23,Moguel Ballado Oscar Octavio,75,1,3,4,5,1,1,0,0,1,3,0,1,0,0,13,0,9,0,1,0,0,2,0
+mc24,Ochoa Mejia Maria Teresa Rosaura,66,2,2,5,5,1,3,1,0,1,4,0,2,0,0,41,67,108,0,0,1,0,2,0
+mc25,Ortega Pacheco Ivonne Aracelly,48,2,2,3,5,1,2,0,1,4,3,0,2,0,0,7,16,1,1,0,0,0,2,0
+mc26,Pintos Caballero Andres,45,1,1,2,5,3,2,0,1,0,4,0,1,0,0,16,20,16,0,1,0,1,0,4
+mc27,Rodriguez Carrillo Mario Alberto,54,1,2,1,5,1,1,0,1,1,4,0,2,0,0,60,62,11,0,0,0,0,1,0
+mc28,Rodriguez Gonzalez Taygete Irlsay,27,2,1,1,5,1,1,0,1,0,6,0,3,1,0,36,29,29,0,0,0,0,2,0
+mc29,Samperio Chaparro Rodrigo Herminio,30,1,2,5,5,1,1,0,0,0,3,0,1,0,0,9,21,13,0,0,0,0,0,0
+mc30,Alvarez Maynez Jorge,36,1,2,1,5,1,2,1,1,2,4,0,2,0,1,185,55,188,0,1,1,0,0,4
+mc31,Chertorivski Woldenberg Salomon,47,1,2,4,5,1,3,0,1,0,4,1,1,0,0,8,36,11,0,1,0,0,1,4
+mc32,Gaudiano Rovirosa Gerardo,40,1,2,3,5,1,2,0,0,1,3,0,2,0,0,3,13,11,0,1,0,0,1,7
+pvem1,Aguilar Piña Kevin Angelo,28,1,1,2,6,1,2,0,1,0,4,0,1,0,0,1,16,1,0,0,0,0,0,0
+pvem2,Alcala Izguerra Maria Jose,49,2,2,2,6,1,1,0,0,0,2,1,0,0,0,7,8,0,0,0,0,0,3,0
+pvem3,Buenrostro Martinez Jose Guadalupe,38,1,3,1,6,1,1,0,1,0,4,0,1,0,0,3,6,0,0,1,0,0,0,0
+pvem4,Bugarin Jasmin Maria ,35,2,1,1,6,1,2,0,1,2,3,0,1,1,0,12,5,0,0,0,0,0,1,3
+pvem5,Carrillo Soberanis Juan Luis,38,1,1,3,6,1,2,0,1,1,4,0,2,0,0,31,21,34,1,0,0,0,0,0
+pvem6,Castrejón Trujillo Karen,41,2,2,5,6,1,1,0,1,1,3,1,1,0,0,10,13,6,0,0,0,0,0,0
+pvem7,Corona Nakamura Maria del Rocio,57,2,1,1,6,1,2,0,1,7,3,0,3,0,0,117,26,29,0,0,0,0,0,3
+pvem8,Cruz Pelaez Fatima Almendra,34,2,1,4,6,1,1,1,0,0,7,0,1,1,0,11,21,5,1,0,1,0,0,0
+pvem9,Delgadillo Gonzalez Claudia,49,2,1,1,6,2,3,0,1,2,4,0,1,0,0,2,14,4,0,1,0,0,2,3
+pvem10,Dominguez Zopiyactle Itzel Aleli,30,2,1,3,6,1,2,0,0,0,3,0,2,0,0,6,12,6,0,0,0,0,2,0
+pvem11,Esquinca Gomez Adriana Guadalupe,39,2,3,3,6,1,3,0,0,0,3,0,1,0,0,2,3,0,0,1,0,0,0,0
+pvem12,Estefan Gillessen Jose Antonio,35,1,1,3,6,1,2,0,0,0,3,0,1,0,0,1,9,0,0,0,0,0,1,0
+pvem13,Fernandez Benavante Maria del Carmen,53,2,3,3,6,1,1,1,1,0,3,0,2,0,0,0,2,0,0,1,1,0,0,0
+pvem14,Fernandez Cruz Nayeli Arlen,37,2,2,4,6,1,1,0,1,1,3,0,2,1,0,17,9,6,1,0,0,0,4,0
+pvem15,Gallardo Garcia Fausto,44,1,1,1,6,1,1,0,1,2,3,0,1,0,0,12,7,16,1,0,0,0,0,0
+pvem16,Gomez Betancourt Armando Antonio,52,1,1,3,6,2,1,0,1,0,3,0,1,0,0,5,15,2,0,0,0,0,1,0
+pvem17,Gonzalez Cruz Luis Arturo,67,1,2,1,6,1,1,1,1,0,4,0,1,1,0,24,6,5,0,0,1,0,5,0
+pvem18,Gonzalez Lima Juan,50,1,3,2,6,1,1,0,0,0,4,0,1,1,0,7,10,2,0,1,0,0,0,0
+pvem19,Hernandez Villafuerte Gilberto,59,1,1,2,6,1,1,0,1,0,3,0,2,0,0,2,13,0,0,0,0,0,1,3
+pvem20,Huerta Valdovinos Ana Laura,53,2,1,2,6,1,1,1,0,0,6,0,1,0,0,6,28,3,0,0,1,0,0,3
+pvem21,Llaven Abarca Jorge Luis,48,1,1,3,6,2,4,0,1,0,7,0,4,0,0,5,27,0,0,1,0,0,1,5
+pvem22,Lopez Casarin Javier Joaquin,48,1,2,4,6,1,0,1,1,0,4,0,1,0,0,15,10,17,0,0,1,0,3,3
+pvem23,Martinez Bravo Luis Alberto,41,1,2,5,6,1,2,0,1,0,5,0,1,0,0,3,12,1,0,0,0,0,1,0
+pvem24,Melgar Bravo Luis Armando,55,2,1,3,6,1,2,0,1,2,3,1,0,0,0,3,12,1,0,0,0,0,7,1
+pvem25,Mendoza Diaz Sonia,52,2,2,2,6,1,2,0,1,4,3,0,1,0,0,9,9,0,0,0,0,0,1,3
+pvem26,Montemayor Castillo Santy,45,2,3,3,6,1,1,0,1,1,4,0,1,0,0,0,7,1,1,1,0,0,2,0
+pvem27,Monzon Garcia Eunice,60,2,1,4,6,1,1,0,0,2,4,0,1,0,0,5,25,2,0,0,0,0,0,0
+pvem28,Natale Gutierrez Marco Antonio,64,1,1,4,6,1,0,1,1,0,3,0,1,0,0,24,20,42,0,0,1,1,1,0
+pvem29,Natale Lopez Juan Carlos,40,1,2,3,6,1,2,0,0,2,5,0,1,0,0,17,14,65,1,0,0,0,2,0
+pvem30,Navarrete Navarro Consuelo del Carmen,49,2,1,3,6,1,2,0,1,0,3,0,2,0,0,6,20,0,0,0,0,0,0,0
+pvem31,Navarro Muñiz Juan Manuel,51,1,1,2,6,1,2,0,1,0,1,0,0,0,0,0,3,0,0,0,0,0,0,4
+pvem32,Palacios Diaz Luis Edgardo,48,1,1,4,6,1,1,0,1,1,6,0,2,1,0,4,29,4,0,0,0,0,0,0
+pvem33,Peña Martinez Angelica,60,2,1,3,6,1,2,0,1,0,4,0,1,0,0,9,9,6,0,0,0,0,1,3
+pvem34,Pienete Vargas Maria del Carmen,61,2,1,3,6,1,2,1,1,2,6,0,3,0,0,7,23,6,1,0,1,0,0,0
+pvem35,Puente Salas Carlos Alberto,49,1,2,2,6,1,1,0,1,4,5,0,2,0,1,2,22,1,1,0,0,0,1,0
+pvem36,Quijano Tapia Janine Patricia,50,2,2,3,6,1,1,0,0,0,3,0,1,0,0,6,11,7,0,0,0,0,3,0
+pvem37,Rubio Montejo Roberto Antonio,44,1,1,3,6,1,1,0,0,1,3,0,1,0,0,1,9,0,0,0,0,0,0,0
+pvem38,Salomon Duran Ciria Yamile,64,2,1,5,6,1,2,0,1,0,3,0,2,0,0,20,21,6,1,0,0,0,0,0
+pvem39,Sanchez Sanchez Christian Joaquin,39,1,1,2,6,1,2,0,1,2,3,0,1,0,0,2,7,1,0,0,0,0,2,0
+pvem40,Segovia Hernandez Roberto Alejandro,46,1,1,2,6,1,1,0,1,1,2,0,1,0,0,4,4,8,0,0,0,0,2,3
+pvem41,Ramirez Ramos Antonio de Jesus,34,1,1,1,6,1,1,0,1,0,6,0,1,0,0,9,19,5,1,1,0,0,0,5
+pvem42,Santiago Barrientos Valeria,39,2,2,3,6,1,1,0,1,1,4,0,1,0,0,12,8,2,0,1,0,0,4,3
+pvem43,Montes de Oca Avendaño Juan Pablo,44,1,1,3,6,1,1,0,1,1,6,0,2,0,0,0,4,0,0,1,0,0,0,4
+pvem44,Gloria Requena Tomas,50,1,1,2,6,1,2,0,1,1,4,0,1,0,0,0,11,2,0,1,0,0,0,10
+pt1,Sandoval Bertin Juan Isaias,32,1,1,1,7,2,2,0,1,0,4,0,3,0,0,8,10,6,0,0,0,0,1,3
+pt2,Aguilar Gil Lilia,44,2,1,1,7,1,1,0,0,2,4,1,0,0,0,56,78,21,1,0,0,0,1,0
+pt3,Aguilar Lopez Jose Alejandro,58,1,1,4,7,1,2,1,1,1,3,0,1,0,0,25,11,1,1,0,1,0,0,0
+pt4,Alcantara Martinez Leobardo,43,1,1,1,7,1,1,0,0,1,4,0,3,0,0,17,10,6,0,0,0,0,0,3
+pt5,Anaya Gutierrez Alberto,75,1,2,2,7,1,2,0,0,7,4,0,0,1,1,11,2,0,0,0,0,0,3,1
+pt6,Baltierra Garcia Jaime,47,1,1,4,7,1,1,0,1,1,3,0,1,0,0,10,12,16,0,0,0,0,1,0
+pt7,Bernal Camarena Ana Laura,43,2,1,1,7,1,1,0,1,1,5,0,2,0,0,42,8,39,0,1,0,0,4,0
+pt8,Bernal Martinez Mary Carmen,37,2,1,4,7,1,1,0,1,1,7,1,1,1,0,29,40,1,1,0,0,0,1,0
+pt9,Espinosa Ramos Francisco Amadeo,66,1,2,3,7,1,1,0,0,2,5,0,2,0,0,0,9,0,1,0,0,0,0,0
+pt10,Favela Peñuñuri Francisco,66,1,1,5,7,1,2,1,1,0,3,0,1,0,0,5,14,1,0,0,1,0,0,0
+pt11,Femat Bañuelos Alfredo,60,1,1,2,7,1,1,1,0,1,3,1,1,0,0,4,14,1,1,0,1,0,0,0
+pt12,Fernandez Noroña Jose Gerardo,61,1,1,4,7,1,2,0,0,2,11,0,4,0,0,7,230,2,0,0,0,0,3,0
+pt13,Garay Loredo Irma Yordana,33,2,1,4,7,1,1,0,0,1,4,0,1,0,0,2,15,0,1,0,0,0,0,0
+pt14,Garcia Garcia Margarita,55,2,1,3,7,1,3,1,1,2,3,0,2,0,0,55,81,76,1,0,1,0,0,0
+pt15,Garcia Hernandez Jesus Fernando,63,1,1,1,7,1,3,1,1,2,7,0,2,1,0,30,18,1,1,0,1,0,0,0
+pt16,Garduño Garduño Marisela ,43,2,1,5,7,1,1,0,0,0,3,0,1,0,0,6,15,4,0,0,0,0,0,0
+pt17,Maceda Carrera Nelly ,42,2,1,4,7,1,1,0,0,1,3,0,1,0,0,2,5,1,0,0,0,0,1,0
+pt18,Martinez Romano Esther,44,2,1,4,7,1,1,1,0,0,5,0,1,0,0,16,23,30,0,0,1,0,0,3
+pt19,Martinez Ruiz Maribel,49,2,2,3,7,1,2,0,1,1,5,0,2,0,0,9,19,6,1,0,0,0,0,0
+pt20,Martinez Ventura Luis Enrique,58,1,1,5,7,1,1,0,1,2,3,0,2,0,0,11,6,0,1,0,0,0,0,0
+pt21,Moreno Hernandez Brigido Ramiro,60,1,1,2,7,1,2,0,1,0,3,0,1,0,0,5,3,8,1,0,0,0,3,0
+pt22,Nuñez Monreal Magdalena del Socorro,62,2,2,4,7,1,2,0,1,2,9,0,5,0,0,6,18,3,1,0,0,0,2,0
+pt23,Ortiz Rodríguez Jorge Armando,42,1,1,1,7,1,1,0,0,1,4,0,1,0,0,0,11,5,1,0,0,1,1,1
+pt24,Paez Güereca Maria de Jesus,59,2,3,1,7,1,1,0,0,0,3,0,1,0,0,14,12,0,0,1,0,0,1,0
+pt25,Reyes Ledesma Armando,49,1,1,1,7,1,1,0,1,2,3,0,1,0,0,12,13,24,0,0,0,0,2,0
+pt26,Robles Montoya Angel Benjamin,61,1,1,3,7,1,4,0,1,3,4,0,2,0,0,48,88,20,0,0,0,0,0,0
+pt27,Rojo Pimentel Ana Karina,44,2,1,5,7,1,3,0,0,1,6,1,1,0,0,25,30,21,1,0,0,0,1,0
+pt28,Rosete Sanchez Maria de Jesus,61,2,1,5,7,1,4,1,0,1,3,0,2,0,0,15,31,25,1,0,1,0,3,0
+pt29,Sandoval Flores Reginaldo,54,1,2,5,7,1,1,0,0,1,11,0,1,1,0,27,57,11,1,0,0,0,1,0
+pt30,Serrano Romero Fabiola,36,2,3,4,7,1,1,0,0,0,3,0,1,0,0,1,1,0,0,0,0,0,0,0
+pt31,Vazquez Garcia Dionicia,73,2,1,5,7,1,1,1,1,1,6,0,1,0,0,16,20,31,1,0,1,0,0,0
+pt32,Vazquez Gonzalez Pedro,68,1,2,4,7,1,1,0,1,3,3,0,2,1,0,7,26,1,1,0,0,0,0,0
+pt33,Vazquez Romero Shirley Guadalupe,54,2,1,1,7,1,2,0,1,1,6,0,1,0,0,26,30,4,0,0,0,0,1,0
+pt34,Wences Real Victoriano,47,1,1,4,7,1,2,0,1,2,3,0,2,0,0,26,10,8,0,0,0,0,1,3
+pt35,Celestino Rosas Araceli,44,2,1,4,7,1,1,0,1,0,5,0,2,0,0,93,22,11,0,1,0,0,0,3
+sp1,Prieto Terrazas Susana,54,2,1,1,8,3,1,0,0,0,7,0,3,0,0,34,66,13,0,0,0,1,0,0
+sp2,Fernandez Pina Laura Lynn,50,2,1,3,8,3,3,0,1,1,4,0,1,0,0,5,23,7,0,0,0,0,1,3
+sp3,Espinosa Chazaro Luis Angel Xariel,47,1,2,4,8,3,1,0,1,1,3,0,0,1,1,3,26,7,0,0,0,0,2,0
+sp4,Gamboa Miner Pablo,35,1,2,3,8,3,1,0,1,1,4,0,3,0,0,1,1,0,0,0,0,0,2,0

@@ -1,0 +1,490 @@
+---
+title: "AnalisisVariablesControl"
+author: "Abel Vidaña"
+date: "2024-10-31"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Este es el archivo en el que hago análisis y visualizaciónes de mis variables control
+
+## Cargar paquetes y bases de datos
+
+```{r}
+rm(list=ls())
+pacman::p_load(skimr, ggplot2, dplyr, tidyverse, ggcorrplot, textreg, GGally, corrplot, scales)
+Diputados<-read.csv("/Users/Abel/Documents/Abel/Colmex/9no/Tesis/Tesis/Datos/Diputados.csv")
+```
+
+Hago un skim para ver la estructura de la base
+```{r}
+skimr::skim(Diputados)
+```
+
+Cambio la variable de partidos a una de caracter
+```{r}
+Diputados<- Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                        "2" = "PRI",
+                        "3" = "PRD",
+                        "4" = "PAN",
+                        "5" = "MC",
+                        "6" = "PVEM",
+                        "7" = "PT",
+                        "8" = "Sin Partido"))
+```
+
+Creo una lista de colores para los partidos
+```{r}
+partidoscol <- c("Morena" = "#460000", 
+               "PAN" = "#0000ff", 
+               "PRI" = "#008000", 
+               "PVEM" = "#4CBD49",
+               "PT" = "#d80300",
+               "MC" = "#FF8000",
+               "Sin Partido" = "gray", 
+               "PRD" = "yellow")
+```
+
+##Exploración de experiencia legislativa
+
+Empiezo con un histograma
+```{r}
+Diputados %>% 
+  ggplot(aes(x= exp_leg))+
+  geom_histogram(fill = "#f5f5dc", col = "black", binwidth = 1)+
+  labs(title = "Experiencia legislativa de diputados de la LXV Legislatura",
+       subtitle = "Cada unidad de 'experiencia' se refiere a una legislatura dentro de un congreso, local o federal",
+       x = "Experiencia legislativa",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  scale_x_continuous(breaks = c(0,1, 2, 3,4,5,6,7,8,9))
+```
+
+Una tabla para ver en numericamente la distribución
+```{r}
+table(Diputados$exp_leg)
+```
+
+¿Quiénes son los diputados que más experiencia tienen (los dos más outlier)?
+```{r}
+Diputados %>% 
+  filter(exp_leg > 7)
+```
+
+La mayoría de los diputados no tiene ninguna experiencia legislativa (264) Por otra parte, eso implica que la otra mitad sí tiene experiencia, la mayoría una legislatura en un congreso, 69 en 2, 20 en 3, 19 en 4 y de 5-7 tres en cada uno. Finalmente hay dos personas ya muy outliers, una con 8 y otra con 9 (ambos del PRI)
+
+Gráfica de barras apiladas de experiencia
+```{r}
+Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  ggplot(aes(x= exp_leg, fill = partido))+
+  geom_histogram(col = "black", binwidth = 0.5)+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  scale_x_continuous(breaks = c(0,1, 2, 3,4,5,6,7,8,9))+
+  labs(title = "Experiencia legislativa de diputados de la LXV Legislatura por partido",
+       subtitle = "Cada unidad de 'experiencia' se refiere a una legislatura dentro de un congreso, local o federal",
+       x = "Experiencia legislativa",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Ahora en facetas por partido
+```{r}
+Diputados %>% 
+  ggplot(aes(x= exp_leg, fill = partido))+
+  geom_histogram(col = "black", binwidth = 0.5)+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  scale_x_continuous(breaks = c(0,1, 2, 3,4,5,6,7,8,9))+
+  facet_wrap(~partido)+
+  labs(title = "Experiencia legislativa de diputados de la LXV Legislatura por partido",
+       subtitle = "Cada unidad de 'experiencia' se refiere a una legislatura dentro de un congreso, local o federal",
+       x = "Experiencia legislativa",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Esta curioso porque parece que hay proporciones similares de novatos y veteranos, 50 y 50. El PAN parece ser un poco diferente, especialmente por la diferencia que se ve entre los novatos y los veteranos de una legislatura, son casi el mismo numero. El PT tiene a más legisladores con experiencia que novatos. Veamoslo más en específico
+```{r}
+Diputados %>% 
+  select(partido, exp_leg) %>% 
+  group_by(partido) %>% 
+  summarise(novatos = sum(exp_leg == 0), veteranos = sum(exp_leg >0))
+```
+
+El PAN, el PRD, el PRI, el PT y el PVEM todos tienen más veteranos que novatos. El PT es el más sorprendente con 8 novatos y 27 veteranos.
+
+#Variables de desempeño
+
+¿Qué tan distintas son las dinámicas de iniciativas, posicionamientos en pleno y los puntos de acuerdo? ¿Cómo se ve el desempeño entre partidos y principios de elección?
+
+## Iniciativas
+
+Empiezo con unos histogramas
+
+```{r}
+Diputados %>% 
+  select(partido, iniciativa) %>% 
+  ggplot(aes(x =iniciativa, fill = partido))+
+  geom_histogram(binwidth = 7)+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0, 25, 50, 75, 100, 125, 150, 175))+
+  theme(legend.position = "right")+
+    labs(title = "Numero de iniciativas presentadas por diputados en la LXV Legislatura",
+       subtitle = "El color Indica el partido",
+       x = "Iniciativas presentadas",
+       y = "Frecuencia",
+       fill = "Partido",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Ahora por facetas
+```{r}
+Diputados %>% 
+  select(partido, iniciativa) %>% 
+  ggplot(aes(x =iniciativa, fill = partido))+
+  geom_histogram(binwidth = 7)+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0, 25, 50, 75, 100, 125, 150, 175))+
+  theme(legend.position = "none")+
+  facet_wrap(~partido)+
+   labs(title = "Numero de iniciativas presentadas por diputados en la LXV Legislatura",
+       subtitle = "Comparación entre partidos",
+       x = "Iniciativas presentadas",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Son poco útiles por las grandes diferencias que hay entre la mayoría y los demás grupos, también porque todos están sesgados a la izquierda, a excepción del PT que tiene una distribución un poco más aleatoria, incluso un poco más normal
+
+Un boxplot es más util para comparar, por partido qué tanto presentan iniciativas
+```{r}
+Diputados %>% 
+  select(partido, iniciativa) %>% 
+  ggplot(aes(x = partido, y = iniciativa, fill = partido))+
+  geom_boxplot(col = "grey30")+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+   labs(title = "Distribución y tendencia central de número iniciativas presentadas",
+       subtitle = "De diputados de la LXV Legislatura",
+       x = "Partido",
+       y = "Iniciativas presentadas",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+Sorprendentemente Morena es el más bajo aunque tiene el control de agenda, esto puede ser porque los diputados reconocen que las iniciativas que se aprobarán son las del liderazgo, mientras que la oposición, como no tiene capacidad de aprobar mucho, intenta incidir como puede con la mayor cantidad de iniciativas.
+
+¿Puede ser que la experiencia legislativa incida en el numero de iniciativas que presentan? Entonces vamos a ver una correlación
+```{r}
+cor(Diputados$exp_leg, Diputados$iniciativa, method = "spearman")
+```
+Es pequeña y no incide realmente, veamos en una gráfica de dispersión
+
+```{r}
+Diputados %>% 
+  filter(iniciativa <100) %>% 
+  ggplot(aes(x = exp_leg, y = iniciativa, col = partido))+
+  geom_jitter()+
+  scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 125, 150, 175))+
+  scale_x_continuous(breaks = c(0,1, 2, 3, 4, 5, 6, 7, 8, 9))+
+  scale_color_manual(values = partidoscol)+
+  labs(title = "Iniciativas presentadas de acuerdo a la experiencia legislativa",
+       subtitle = "Sin incluir a aquellos que presentaron más de 50",
+       x = "Experiencia Legislativa",
+       y = "Iniciativas Presentadas",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+Realmente parece lo contrario, entre más experiencia tiene una persona, menos iniciativas presenta, entre los novatos hay mucha variación, pero en general se concentran en menos de 15 iniiativas la mayoría de los legisladores
+
+Podemos quitar los outliers, cómo es la dispersión si sólo contamos a diputados con menos de 50 iniciativas y menos de 3 legislaturas de experienca
+
+```{r}
+Diputados %>% 
+  filter(iniciativa <50) %>% 
+  filter(exp_leg <= 5) %>% 
+  ggplot(aes(x = exp_leg, y = iniciativa, col = partido))+
+  geom_jitter()+
+  scale_y_continuous(breaks = c(0, 10, 20, 30, 40, 50))+
+  scale_x_continuous(breaks = c(0,1, 2,3 ,4 ,5))+
+  scale_color_manual(values = partidoscol)+
+  labs(title = "Iniciativas presentadas de acuerdo a la experiencia legislativa",
+       subtitle = "Sin incluir a aquellos que presentaron más de 50 y los que np tienen más de 5 legislaturas de experiencia",
+       x = "Iniciativas Presentadas",
+       y = "Experiencia Legislativa",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Incluso si borramos a los más experimentados, realmente son los novatos los que más iniciativas presentan. Esto queda mucho con lo que nos dijo Cantón Zetina y Alfredo Femat: los legisladores con experiencia saben que pocas iniciativas pasan y por lo tanto es mejor concentrarse en pocas (aunque no las presente uno mismo) que querer abarcar mucho-
+Esto deja claro que la presentación de iniciativas no es un buen indicador de desempeño
+
+Partiendo igual de lo que me dijeron en las entrevistas, las secretarías son posiciones que permiten impulsar de forma estratégica iniciativas ¿cómo se ve la relación entre la posición y el número de iniciativas introducida?
+
+```{r}
+Diputados %>% 
+  filter(iniciativa < 50) %>% 
+  ggplot(aes(x = secre, y = iniciativa, col = partido))+
+  geom_jitter()+
+  scale_color_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0,1, 2,3 ,4 ,5))+
+  labs(title = "Iniciativas presentadas por diputado de acuerdo a secretarías de comisiones que ostenta",
+       subtitle = "Sin incluir a aquellos que presentaron más de 50",
+       x = "Iniciativas Presentadas",
+       y = "Secretarías de comisiones",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+```{r}
+cor(Diputados$secre, Diputados$iniciativa, method = "spearman")
+```
+
+Los diputados que ostentan una secretaría sí presentan más iniciativas que los que tienen 0, pero ya cuando crece mucho el numero de secretarias entonces disminuye la cantidad de iniciativas, esto porque probablemente son diputados agentes de partido, que se mueven mucho entre ellas de acuerdo a coyunturas, o también personas que estuvieron en la Mesa Directiva. 
+
+Tal vez con el numero de comisiones en general
+
+```{r}
+Diputados %>% 
+  filter(iniciativa < 50) %>% 
+  ggplot(aes(x = comision, y = iniciativa, col = partido))+
+  geom_point()+
+  scale_color_manual(values = partidoscol)+
+  labs(title = "Iniciativas presentadas por diputado de acuerdo al numero de comisiones en las que está",
+       subtitle = "Sin incluir a aquellos que presentaron más de 50",
+       x = "Numero de comisiones",
+       y = "Iniciativas Presentadas",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+
+cor(Diputados$comision, Diputados$iniciativa, method = "spearman")
+```
+Los que tienen muchas comisiones o cambian de ellas presentan pocas iniciativas, y si lo notamos la mayoría de ellos son de Morena. Fortalece el argumento de que los diputados más enfocados en actividades partidistas hacen menos trabajo legislativo individual
+
+#2. Posicionamientos en Pleno
+
+Empezemos con boxplot para ver disitribución y tendencia
+```{r}
+Diputados %>% 
+  select(partido, pleno) %>% 
+  filter(partido != "SP") %>% 
+  ggplot(aes(x = partido, y = pleno, fill = partido))+
+  geom_boxplot(col = "grey30")+
+  scale_fill_manual(values = partidoscol)+
+  theme(legend.position = "none")+
+  labs(title = "Distribución de participaciones en pleno de acuerdo al partido",
+       subtitle = "En la LXV Legislatura",
+       x = "Partido",
+       y = "Número de participaciones en Pleno",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+Otra vez Morena se queda abajo, aquí tiene más sentido, porque los espacios para expresarse en el pleno son mucho más escazos cuando la bancada es más grande. Por eso el PRD y MC tienen las medias más altas, mejor hacer un histograma
+
+```{r}
+Diputados %>% 
+  select(partido, pleno) %>% 
+  ggplot(aes(x =pleno, fill = partido))+
+  geom_histogram(binwidth = 7, col = "black" )+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0, 25, 50, 75, 100, 125, 150, 175))+
+  theme(legend.position = "none")+
+  facet_wrap(~partido)+
+  labs(title = "Distribución de participaciones en pleno de acuerdo al partido",
+       subtitle = "En la LXV Legislatura",
+       x = "Partido",
+       y = "Número de participaciones en Pleno",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+Vemos que la gráfica de Morena es la que más está sesgada hacia la izquierda, como son tantos dputados, tienen menos posibilidad de participar en tribuna
+
+¿Quienes son los valores máximos dentro de cada partido?
+
+```{r}
+
+partidos<- unique(Diputados$partido)
+resultados <- list()
+
+for (partido in partidos) {
+  subset_partido <- Diputados %>% filter(partido == !!partido)
+  
+  fila_maxima <- subset_partido %>% 
+    .$pleno %>%
+    which.max()
+
+  resultados[[partido]] <- subset_partido[fila_maxima, ]
+}
+
+dip_habladores <- do.call(rbind, resultados)
+print(dip_habladores)
+```
+Vemos que la mayoría de las personas que más participaron en el pleno dentro de sus grupos parlamentarios son líderes o personas que tienen experiencia política, aunque no necesariamente intrapartidista, son personas con pocas inasistencias y sin ninguna indisciplina
+
+¿Tienen las participaciones relación con el numero de comisiones?
+
+```{r}
+Diputados %>% 
+  filter(pleno < 125) %>% 
+  filter(comision < 10) %>% 
+  ggplot(aes(x = comision, y = pleno, col = partido))+
+  geom_jitter()+
+  stat_smooth(method = "lm", se = FALSE, color = "tomato")+
+  scale_x_continuous(breaks = c(0, 2, 4, 6, 8, 10))+
+  scale_color_manual(values = partidoscol)+
+    labs(title = "Participaciones en el pleno y pertenencia a comisiones",
+       subtitle = "Cantidad de participaciones en tribuna de acuerdo a pertenencia a comisiones en LXV Legislatura",
+       x = "Numero de comisiones",
+       y = "Número de participaciones en Pleno",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+
+```
+
+Corro correlación
+```{r}
+
+cor(Diputados$comision, Diputados$pleno, method = "spearman")
+```
+
+Hay una correlación un poco más fuerte, pero otra vez las personas que más comisiones ostentan presentan. Las personas en cero comisiones no presentan iniciativas, estos son suplentes que ya entraron muy tarde o personas que están en la mesa directiva, pero sí parece que los diputados que tienen más comisiones llegan a hablar más en el pleno. 
+
+Podríamos también ver si hay diferencia entre dirigentes y militantes
+```{r}
+Diputados %>% 
+  mutate(dirigencia = recode(dirigencia, "0" = "Militante", "1" = "Dirigente")) %>% 
+  filter(dirigencia >= 0) %>% 
+  ggplot(aes(x = dirigencia, y = pleno))+
+  geom_boxplot(fill = "#f5f5dc", col = "grey20")
+```
+
+La media entre los dirigentes es más alta, y los outliers más altos están en esa categoría, sería interesante entonces estudiar a los militantes que hablan más 
+
+#3. Inasistencias
+
+Analicemos en relación al principio de elección
+
+```{r}
+Diputados %>% 
+  select(partido, inasistencia, p_elecc) %>% 
+  filter(p_elecc <3) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "uninominal", "2" = "plurinominal")) %>% 
+  ggplot(aes(x =inasistencia))+
+  geom_histogram(binwidth = 1, fill ="#f5f5dc", col = "black" )+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  theme(legend.position = "right")+
+  geom_text(aes(label = ifelse(..count.. > 0, ..count.., NA)),
+            stat = "bin",
+            vjust = 0.8,
+            hjust = - 0.8,
+            color = "black")+
+  facet_wrap(~p_elecc)
+```
+Vemos que la mayoría de los diputados no falta, en cuanto a los principios de elección parece que los que son diputados plurinominales faltan más que los uninominales, algo un poco contradictorio ya que son los primeros los que deberían tener que faltar por hacer trabajo, pero es difícil ver esto en un histograma, hagamos un boxplot por principio
+
+```{r}
+#uninominales
+Diputados %>% 
+  select(partido, inasistencia, p_elecc) %>% 
+  filter(p_elecc <3) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "uninominal", "2" = "plurinominal")) %>% 
+  filter(p_elecc == "uninominal") %>% 
+  ggplot(aes( y = inasistencia, fill = partido))+
+  geom_boxplot(col = "grey30")+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  scale_y_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  scale_fill_manual(values = partidoscol)+
+  facet_wrap(~partido)+
+  labs(title = "Distribución de asistencia de diputados uninominales",
+       subtitle = "Qué tanto faltaron los diputados de distrito en cada partido en la muestra de iniciativas",
+       x = "",
+       y = "Numero de inasistencias",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  theme(legend.position = "none")
+```
+```{r}
+#Plurinominales
+Diputados %>% 
+  select(partido, inasistencia, p_elecc) %>% 
+  filter(p_elecc <3) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "uninominal", "2" = "plurinominal")) %>% 
+  filter(p_elecc == "plurinominal") %>% 
+  ggplot(aes( y = inasistencia, fill = partido))+
+  geom_boxplot()+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  scale_y_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  scale_fill_manual(values = partidoscol)+
+  facet_wrap(~partido)+
+  labs(title = "Distribución de asistencia de diputados plurinominales",
+       subtitle = "Qué tanto faltaron los diputados de lista en cada partido en la muestra de iniciativas",
+       x = "",
+       y = "Numero de inasistencias",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  theme(legend.position = "none")
+```
+
+Y sí,incluso dentro de los partidos los diputados que más faltan son los plurinominales, en el PAN es muy similar por ambos principios, pero en MC es completamente al revés, faltan más los uninominales que los plurinominales
+
+Una tabla para tener los números claros
+```{r}
+table(Diputados$p_elecc, Diputados$inasistencia)
+```
+
+```{r}
+Diputados %>% 
+  filter(p_elecc <3) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "uninominal", "2" = "plurinominal")) %>% 
+  ggplot(aes(x = inasistencia, fill = partido))+
+  geom_histogram()+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9))+
+  facet_wrap(~p_elecc)+
+  labs(title = "Distribución de asistencia de diputados por principio y partido",
+       x = "Número de Inasistencias",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+
+
+## Historia política de los diputados
+
+Unas gráficas de barra
+```{r}
+Diputados %>% 
+  filter(historia_pol> 0) %>% 
+  ggplot(aes(x = historia_pol, fill = partido))+
+  geom_bar()+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(1,2,3,4,5,6))+
+   labs(title = "Numero de partidos al que han pertenecido diputados",
+       x = "Número de Partidos",
+       y = "Frecuencia",
+       fill = "Partido",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+```
+Se ve muy chiquis, mejor en facetas
+
+```{r}
+Diputados %>% 
+  filter(historia_pol> 0) %>% 
+  ggplot(aes(x = historia_pol, fill = partido))+
+  geom_bar()+
+  scale_fill_manual(values = partidoscol)+
+  scale_x_continuous(breaks = c(1,2,3,4,5,6))+
+  facet_wrap(~partido)+
+ labs(title = "Numero de partidos al que han pertenecido diputados",
+      subtitle = "Por partido",
+       x = "Número de Partidos",
+       y = "Frecuencia",
+       fill = "Partido",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  theme(legend.position = "none")
+```
+Ya viendola en facetas se nota muy claro, la gran mayoría de los panistas han sido parte solo de ese partido, igual que los priistas. MC, PRD, PT y PVEM tienen distribuciones similares en las que la mayoría han sido sólo militantes de un partido, pero hay personas con historia política amplia. Por otro lado Morena muestra que más de la mitad de sus miembros han estado en más de un partido, probablemente el PRI y o el PRD
+
+

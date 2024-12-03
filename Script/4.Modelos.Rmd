@@ -1,0 +1,121 @@
+---
+title: "Modelos2"
+author: "Abel Vidaña"
+date: "2024-11-07"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+rm(list = ls())
+Diputados<-read.csv("/Users/Abel/Documents/Abel/Colmex/9no/Tesis/Tesis/Datos/Diputados.csv")
+pacman::p_load(skimr, ggplot2, dplyr, tidyverse, ggcorrplot, textreg, GGally, corrplot, scales, texreg, webshot, webshot2)
+```
+
+Primero hagamos una nueva base que incluya el indicador de desempeño y que tenga partidos por nombre
+```{r}
+DiputadosModeLin <- Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  mutate(desempeño = round((pleno + iniciativa + puntos)/3))
+```
+
+Hagamos los dos modelos lineares
+```{r}
+modeloLinOrg <- lm(indisciplina~ edad + genero + factor(region) + historia_pol + factor(partido) + factor(exp_admin) + exp_leg + factor(asoc) , data = DiputadosModeLin)
+```
+
+```{r}
+modeloLinDes<- lm(indisciplina ~ factor(p_elecc) + factor(chapulin) + factor(dirigencia) + comision + secre + factor(directiva) + desempeño + inasistencia + licencia, data = DiputadosModeLin)
+```
+
+
+```{r resultados_lineares}
+screenreg(modeloLinOrg)
+screenreg(modeloLinDes)
+
+```
+
+
+
+Luego hagamos una para los logísticos que tenga la dicotómica de indisciplina, partidos por nombre y la de desempeño
+
+```{r}
+DiputadosModLog<- Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  mutate(indisciplinado = case_when( indisciplina == 0 ~ 0,
+                                   indisciplina > 0 ~ 1,),
+         desempeño = round((pleno + iniciativa + puntos)/3))
+  
+```
+
+Veamos cuales tenemos que hacer factor
+```{r}
+str(DiputadosModLog)
+```
+
+```{r}
+DiputadosModLog$genero <- as.factor(DiputadosModLog$genero)
+DiputadosModLog$chapulin <- as.factor(DiputadosModLog$chapulin)
+DiputadosModLog$p_elecc <- as.factor(DiputadosModLog$p_elecc)
+DiputadosModLog$dirigencia <- as.factor(DiputadosModLog$dirigencia)
+DiputadosModLog$exp_admin <- as.factor(DiputadosModLog$exp_admin)
+DiputadosModLog$directiva <- as.factor(DiputadosModLog$directiva)
+DiputadosModLog$genero <- as.factor(DiputadosModLog$asoc)
+DiputadosModLog$indisciplinado <- as.factor(DiputadosModLog$indisciplinado)
+```
+
+Hagamos los modelos
+```{r}
+modeloLogOrg <- glm(indisciplinado ~ edad + genero +region + historia_pol + partido + exp_admin + exp_leg + asoc, 
+                    data = DiputadosModLog, 
+                    family = binomial(link = "logit"))
+```
+
+```{r}
+modeloLogDes <- glm(indisciplinado ~ p_elecc + chapulin + dirigencia + comision + secre + directiva + desempeño + inasistencia + licencia, 
+                    data = DiputadosModLog, 
+                    family = binomial(link = "logit"))
+```
+
+```{r}
+screenreg(modeloLogOrg)
+screenreg(modeloLogDes)
+```
+
+```{r}
+htmlreg(modeloLinOrg, file = "tabla_modeloLinOrg.html", custom.model.names = "Modelo 1")
+webshot("tabla_modeloLinOrg.html", file = "tabla_modeloLinOrg.png", vwidth = 800, vheight = 600)
+```
+
+```{r}
+htmlreg(modeloLinDes, file = "tabla_modeloLinDes.html", custom.model.names = "Modelo 2")
+webshot("tabla_modeloLinDes.html", file = "tabla_modeloLinDes.png", vwidth = 800, vheight = 600)
+```
+
+```{r}
+htmlreg(modeloLogOrg, file = "tabla_modeloLogOrg.html", custom.model.names = "Modelo 3")
+webshot("tabla_modeloLogOrg.html", file = "tabla_modeloLogOrg.png", vwidth = 800, vheight = 600)
+```
+
+```{r}
+htmlreg(modeloLogDes, file = "tabla_modeloLogDes.html", custom.model.names = "Modelo 4")
+webshot("tabla_modeloLogDes.html", file = "tabla_modeloLogDes.png", vwidth = 800, vheight = 600)
+```
+

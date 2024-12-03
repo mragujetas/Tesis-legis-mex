@@ -1,0 +1,358 @@
+---
+title: "Modelos"
+author: "Abel Vidaña"
+date: "2024-11-04"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Preparativos:
+```{r ambiente_paquetes}
+rm(list=ls())
+pacman::p_load(skimr, ggplot2, dplyr, tidyverse, ggcorrplot, textreg, GGally, corrplot, scales, texreg)
+
+```
+
+
+```{r base_Diputados}
+Diputados<-read.csv("/Users/Abel/Documents/Abel/Colmex/9no/Tesis/Tesis/Datos/Diputados.csv")
+
+partidoscolname <- c("Morena" = "#460000", 
+                 "PAN" = "#0000ff", 
+                 "PRI" = "#008000", 
+                 "PVEM" = "#4CBD49",
+                 "PT" = "#d80300",
+                 "MC" = "#FF8000",
+                 "SP" = "gray", 
+                 "PRD" = "yellow")
+
+partidoscolnum <- c("1" = "#460000", 
+                 "4" = "#0000ff", 
+                 "2" = "#008000", 
+                 "6" = "#4CBD49",
+                 "7" = "#d80300",
+                 "5" = "#FF8000",
+                 "8" = "gray", 
+                 "3" = "yellow")
+```
+
+
+```{r base_Iniciativas}
+Iniciativas<-read.csv("/Users/Abel/Documents/Abel/Colmex/9no/Tesis/Tesis/Datos/Iniciativas.csv")
+```
+
+En este Markdown lo que hago son los modelos de regresión lineal para el comportamiento de los diputados en votaciones nominales
+
+La pregunta específica es qué factores personales y profesionales inciden en la forma que ejercen el cargo en las sesiones de pleno. Me enfoco en dos específicos:
+
+a. La indisciplina
+b. La inasistencia
+
+## A. La indisciplina
+
+La fuerza de los partidos políticos en el Poder Legislativo hace que la indisciplina sea una estrategia poco común y que exista en dos casos. 
+1. En iniciativas poco relevantes en las que los partidos la permitan
+2. En iniciativas centrales para los partidos en las que diputados faltan a su compromiso y, generalmente, los lleva a cambiarse de partidos, vamos a ver
+
+Importante primero ver qué tantas instancias hay de indisciplina
+
+```{r tabla_indisciplina} 
+table(Diputados$indisciplina)
+```
+En total son 22 diputados que fueron indisciplinados, y en total son 28 votos contra el partido
+
+Por partido se ve un poco así 
+```{r indisciplina_por_partidos}
+Diputados %>% 
+  select(partido, indisciplina) %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  group_by(partido) %>% 
+  summarise(frecuencia = sum(indisciplina)) %>% 
+  ggplot(aes( x= partido, y = frecuencia, fill = partido))+
+  geom_col()+
+  geom_text(aes(label = comma(frecuencia, suffix = " votos")), vjust = -0.5)+
+  scale_fill_manual(values = partidoscolname)+
+  theme(legend.position = "none")+
+  labs(title = "Instancias de indisciplina en la LXV Legislatura",
+       subtitle = "Cada unidad es un voto en sentido diferente al partido en alguna iniciativa de la muestra",
+       x = " ",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa") 
+```
+Morena concentra la mayoría de indisciplinas, aunque hay que pensar que dentro de él están los diputados de otros partidos que chapulinearon, así como en el PAN, p.e que están casos como el de Adela Flores que fueron indisciplinadas y cambiaron.
+
+Por ser la maoyría y tener el control de la agenda puede ser que es más difícil crear cohesión al rededor de todas las iniciativas, a la vez que por tener más cantidad de diputados pues más margen de perder votos individuales tienen
+
+Vale la pena entonces explorar un poco la relación de los chapulines con la indisciplina
+
+```{r indisciplina_chapulines}
+Diputados %>% 
+  mutate(chapulin = recode(chapulin, "1" = "sin cambio", "2" = "Dentro de coalición", "3" = "Fuera de coalición")) %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  na.omit() %>% 
+  ggplot(aes(x = chapulin, y = indisciplina)) +
+  geom_jitter()+
+  theme(legend.position = "none")+
+    labs(title = "Relación de la indisciplina con el cambio de bancada",
+       subtitle = "¿Cuándo es que un chapulin sale de su partido por votar contra el ",
+       x = "Tipo de cambio",
+       y = "Instancias de indisciplina",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa") 
+```
+
+Es relavante que cuando hay cambio fuera de coalición el numero de indisciplinas es generalmente 1, porque son estas instancias en las que el partido ya no puede tener dentro a alguien que rompió las reglas básicas
+
+```{r indisciplina_experiencia}
+Diputados %>% 
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  ggplot(aes(x = exp_leg, y = indisciplina, col = partido))+
+  geom_jitter() +
+  scale_color_manual(values = partidoscolname)+
+  scale_x_continuous(breaks = c(0, 1, 2, 3, 4,5,6,7,8, 9))+
+  labs(title = "La indisciplina de legisladores novatos y veteranos",
+       subtitle = "Cada unidad es un voto en sentido diferente al partido en alguna iniciativa de la muestra",
+       x = "Experiencia Legislativa",
+       y = "Instancias de indisciplina",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa") 
+
+cor(Diputados$exp_leg, Diputados$indisciplina, method = "kendall")
+```
+
+A la vez, podemos observar que los diputados con más experiencia concentran pocos casos de indisciplina, a pesar de que no es necesariamiente una correlación fuerte ningún legislador de más de 5 legislaturas de experiencia dentro de la muestra votó de forma indisciplinada
+
+¿En qué tipo de iniciativas se concentra la indisciplina?
+```{r indisciplina_tipo iniciativa}
+Iniciativas %>%
+  filter(indisciplina > 0) %>% 
+  mutate(oposicion = case_when( Votos.en.contra == 0 ~"Nada",
+                                Votos.en.contra > 0 & Votos.en.contra <= 50 ~ "Poca",
+                                Votos.en.contra > 50 & Votos.en.contra <=150 ~"Moderada",
+                                Votos.en.contra > 150 ~ "Mucha")) %>% 
+  ggplot(aes ( x = indisciplina, fill = oposicion))+
+  geom_histogram(binwidth = 1)+
+  facet_wrap(~Tipo.de.Dictamen)+
+  scale_y_continuous(breaks = c(1,2,3,4))+
+  scale_x_continuous(breaks = c(1,2,3, 4, 5, 6))+
+  labs(title = "Indisciplina por tipo de decreto aprobado",
+       x = "Cantidad de votos indisciplinados",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa",
+       fill = "    Magnitud \n de Oposición") +
+  theme(legend.title = element_text(size = 10),legend.text = element_text(size = 8))
+
+
+```
+
+El caso en el que más indisciplina hay es uno que realmente no tiene relevancia. Primero porque no había oposición al Decreto, que se trataba de "Decreto por el que se declara el 15 de marzo de cada año como el 'día nacional de la porcicultura'". Esto sigue la hipótesis de que en votos no relevantes los diputados tienen la libertad de votar como quieran
+
+Por otro lado en iniciativas de Modificación Constitucional, para las que la Coalición Juntos Haremos Historia no contaba con mayoría vemos más casos de indisciplina que en cualquier otro tipo, en estos sí son casos de indisciplina no sancionada por los partidos. 
+
+```{r indisciplina_p_elecc}
+Diputados %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "Uninominal", "2" = "Plurinominal")) %>% 
+  filter( indisciplina > 0) %>% 
+  ggplot( aes(x = indisciplina))+
+  geom_histogram(binwidth = 1, col = "white", fill = "#f5f5dc" )+
+  scale_x_continuous(breaks = c(1,2,3))+
+  facet_wrap(~p_elecc)+
+  labs(title = "Disciplina de acuerdo a principio de elección",
+       x = "Instancias de indisciplina",
+       y = "Cantidad de diputados",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+
+```
+
+Vemos que los uninominales indisciplinados son mcuho más
+
+```{r indisciplina_dirigencia}
+Diputados %>% 
+  filter(dirigencia < 3) %>% 
+  mutate(dirigencia = recode(dirigencia, "0" = "Militante", "1" = "Dirigente")) %>% 
+  filter( indisciplina > 0) %>% 
+  ggplot( aes(x = indisciplina))+
+  geom_histogram(binwidth = 1, col = "black", fill = "#f5f5dc" )+
+  scale_x_continuous(breaks = c(1,2,3))+
+  facet_wrap(~dirigencia)+
+  labs(title = "Disciplina de acuerdo a principio de elección",
+       x = "Instancias de indisciplina",
+       y = "Cantidad de diputados",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")
+
+unique(Diputados$dirigencia)
+```
+Lo mismo aquí, aunque es interesante que los dirigentes sí muestren instancias de indisciplina
+
+```{r indisciplina_desempeño}
+
+Diputados %>% 
+  mutate(indisciplinado = case_when( indisciplina == 0 ~ 0,
+                                   indisciplina > 0 ~ 1,),
+         desempeño = round((pleno + iniciativa + puntos)/3)) %>% 
+   mutate(exp_leg = case_when( exp_leg == 0 ~"Novato (primera legislatura)",
+                                exp_leg > 0 & exp_leg <= 2 ~ "Experimentado (hasta 2 legislaturas)",
+                                exp_leg > 2 ~ "Veterano (más de dos legislaturas)")) %>% 
+  filter(desempeño < 100) %>% 
+  ggplot( aes(x = desempeño, y = indisciplina, col = exp_leg))+
+  geom_jitter()+
+  scale_color_manual(values = c("Novato (primera legislatura)" = "grey", "Experimentado (hasta 2 legislaturas)" = "purple", "Veterano (más de dos legislaturas)" = "tomato"))+
+   labs(title = "Disciplina de acuerdo a principio de elección",
+       x = "Instancias de indisciplina",
+       y = "Cantidad de diputados",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+   labs(title = "La indisciplina de diputados en relación a su desempeño",
+       x = "Indicador de desempeño",
+       y = "Instancias de indisciplina",
+       color = "Experiencia Legislativa",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa")+
+  theme(plot.caption = element_text(hjust = -1))
+
+
+
+```
+Los indisciplinados tienen peor desempeño que los disciplinados
+
+
+
+
+```{r indisciplina_pleno}
+  Diputados %>% 
+   mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  ggplot( aes(x = pleno, y = indisciplina, col = partido))+
+  geom_jitter()+
+  scale_color_manual(values = partidoscolname)
+
+partidoscolname
+
+```
+
+Ahora es momento de hacer una regresión lineal para ver qué factores pueden aumentar la indisciplina. Primero una gráfica de correlaciones
+
+
+
+
+```{r graf_corr}
+variables_corr<- Diputados %>% 
+  select(edad, genero, p_elecc, region, partido, historia_pol, dirigencia, exp_admin, exp_leg, comision, presi, secre, directiva, jucopo, iniciativa, pleno, puntos, reelecc, completo, asoc, indisciplina) 
+  
+cor_matrix <- cor(variables_corr, use = "pairwise.complete.obs")
+cor_matrix
+
+corrplot(cor_matrix, method = "square")
+```
+Secretaría y Presidencias tienen una correlación negativa, es obvio porque esntre más presidencias tengas menos secretarías puedes, creo que vale la pena correr uno con cada una, pero priorizaría el de secretaría justo porque hay más varianza y en presidencia sólo se puede tener una lit
+
+Iniciativa y puntos tienen igual correlación pero positiva, definitivamente es más importante incluir lo de iniciativa, aunque no exploramos puntos entonces hay que describir esa variable 
+
+```{r inciativa_puntos}
+Diputados %>% 
+  filter(iniciativa < 100) %>% 
+  filter(puntos < 100) %>% 
+  mutate(exp_leg = case_when( exp_leg == 0 ~"Novato",
+                                exp_leg > 0 & exp_leg <= 2 ~ "Experimentado",
+                                exp_leg > 2 ~ "Veterano")) %>% 
+  ggplot(aes( x= iniciativa, y = puntos, col = exp_leg))+
+  geom_jitter()+
+  scale_color_manual(values = c("Novato" = "purple", "Experimentado" = "grey", "Veterano" = "tomato"))
+```
+La relación aquí es curiosa porque los diputados que más puntos hacen no necesariamente hacen muchas iniciativas. Son expresiones políticas donde pueden de forma directa dirigirse a una dependencia u organización del Estado, además de que requieren mucha menos complejidad que una iniciativa. Además de que son mucho más fáciles de aprobar que una iniciativa. 
+
+También los veteranos hacen más puntos que iniciativas al parecer.Entonces vale la pena hacer un modelo con puntos y otro con iniciativas
+
+También hay correlación alta entre jucopo y mesa directiva, eso no lo entiendo mucho, pensaría que sería de estas variables con dirigenica, pero priorizo directiva porque son más los que estuvieron en ese órgano
+
+También hay una correlación entre el principio de elección y el haber completado el cargo, esto es interesante
+
+```{r completo_pelecc}
+Diputados %>%
+  filter(p_elecc <3) %>% 
+  filter(completo <3) %>% 
+  mutate(completo = recode(completo, "0" = "Sí", "1" = "No")) %>% 
+  mutate(p_elecc = recode(p_elecc, "1" = "Uninominal", "2" = "Plurinominal")) %>%
+  mutate(partido = recode(partido, "1" = "Morena",
+                          "2" = "PRI",
+                          "3" = "PRD",
+                          "4" = "PAN",
+                          "5" = "MC",
+                          "6" = "PVEM",
+                          "7" = "PT",
+                          "8" = "SP")) %>% 
+  ggplot(aes(x = completo, fill = partido)) +
+  geom_bar()+
+  facet_wrap(~p_elecc)+
+  scale_fill_manual(values = partidoscolname)+
+  labs(title = "Compleción del cargo por principio de elección",
+       x = "¿Completo el cargo?",
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia con datos del Sistema de Información Legislativa",
+       fill = "Partido") 
+
+
+```
+
+Pues parece no haber mucha relación, proporcionalmente son casi lo mismo. Creo que vale la pena correr las correlaciones con licencias en vez de con completo
+
+
+```{r}
+variables_corr2<- Diputados %>%
+  filter(dirigencia <2) %>% 
+  select(edad, genero, p_elecc, region, chapulin, partido, historia_pol, dirigencia, exp_admin, exp_leg, comision, presi, secre, directiva, jucopo, iniciativa, pleno, puntos, reelecc, licencia, asoc, indisciplina) 
+  
+cor_matrix <- cor(variables_corr2, use = "pairwise.complete.obs")
+cor_matrix
+
+corrplot(cor_matrix, method = "square")
+```
+
+Ahora sí, es una mejor medida de su presencia enla Cámara y no genera correlaciones. Vamos ahora a correr los modelos de la siguiente forma:
+
+1. Modelo que tenga: indisciplian ~edad, genero(factor), p_elección (factor), region (factor), partido (factor), historia_pol, dirigencia (factor), exp_leg, comision, presi, directiva, iniciativa, pleno, licencia, asoc
+
+2. Modelo que tenga: indisciplian ~edad, genero(factor), p_elección (factor), region (factor), partido (factor), historia_pol, dirigencia (factor), exp_leg, comision, secre, directiva, iniciativa, pleno, licencia, asoc
+
+3. Modelo que tenga: indisciplian ~edad, genero(factor), p_elección (factor), region (factor), partido (factor), historia_pol, dirigencia (factor), exp_leg, comision, presi, directiva, puntos, pleno, licencia, asoc
+
+4. Modelo que tenga: indisciplian ~edad, genero (factor), p_elección (factor), region (factor), partido (factor), historia_pol, dirigencia (factor), exp_leg, comision, secre, directiva, puntos, pleno, licencia, asoc
+
+```{r mod1}
+
+modelo1 <- lm(indisciplina~ factor(p_elecc) + historia_pol + factor(dirigencia) + exp_leg + comision + presi + directiva + puntos + pleno + licencia + asoc, data = variables_corr2)
+
+screenreg(modelo1)
+
+```
+
+
+
+
